@@ -1,0 +1,9 @@
+body{
+  margin: 0;
+}
+.top{
+  text-align: center;
+  height: 200px;
+  width: 110%;
+  background-image: url(/images/top.png);
+}
