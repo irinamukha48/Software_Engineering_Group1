@@ -2,7 +2,7 @@
  
 To Run :
 Live :-
-npm run watcg
+npm run watch
 
 Regular:-
 node app.js
