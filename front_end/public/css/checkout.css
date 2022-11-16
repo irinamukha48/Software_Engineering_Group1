@@ -1,0 +1,66 @@
+body{
+  margin: 0;
+}
+.product1{
+  height: 100px;
+  width: 100px;
+  position: relative;
+  left:20px;
+}
+.box2{
+  border-radius: 25px;
+  border: 2px solid;
+  background-color: #EDEDED;
+  height:500px;
+  width:500px;
+  position: relative;
+  top:100px;
+  left:100px;
+}
+.box1{
+  border-radius: 25px;
+  border: 2px solid;
+  background-color: #EDE4E0;
+  height:500px;
+  width:500px;
+  position: relative;
+  top:100px;
+  left:100px;
+}
+.left{
+  height: 830px;
+  width: 50%;
+  background-color: #AEBDCA;
+}
+.right{
+  height: 830px;
+  width: 50%;
+  background-color: #7895B2;
+  position: relative;
+  left:50%;
+  bottom:830px;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 19px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  size
+}
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}

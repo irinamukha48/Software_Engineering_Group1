@@ -1,0 +1,116 @@
+.body{
+  margin-top: 0px;
+}
+.order{
+  height:860px;
+  width: 300px;
+  position: relative;
+  left:1138px;
+  bottom:30px;
+  background-color:#2C3333;
+}
+
+.upper{
+  height: 150px;
+  width: 1138px;
+  background-color:#395B64;
+  position: relative;
+  bottom:910px;
+  right:8px;
+  border: 4px solid;
+  border-color: #7895B2;
+}
+.middle{
+  height:718px;
+  width: 1143px;
+  background-color:#E7F6F2;
+  position: relative;
+  bottom:910px;
+  right:8px;
+  border: 2px solid;
+  border-color: #7895B2;
+}
+.foodOne{
+  width: 300px;
+  height:200px;
+  position: relative;
+  top:60px;
+  left: 40px;
+  background-image: url(/images/fries.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+}
+.foodtwo{
+  width: 300px;
+  height:200px;
+  position: relative;
+  bottom:168px;
+  left: 400px;
+  background-image: url(/images/burger.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+}
+.foodthree{
+  width: 300px;
+  height:200px;
+  position: relative;
+  bottom:389px;
+  left: 805px;
+  background-image: url(/images/pizzapic.png);
+  background-repeat: no-repeat;
+  background-size: 90%;
+}
+.foodfour{
+  width: 300px;
+  height:200px;
+  position: relative;
+  bottom:290px;
+  left: 40px;
+  background-image: url(/images/friedChicken.png);
+  background-repeat: no-repeat;
+  background-size: 95%;
+}
+.foodfive{
+  width: 300px;
+  height:200px;
+  position: relative;
+  bottom:500px;
+  left: 460px;
+  background-image: url(/images/salad.png);
+  background-repeat: no-repeat;
+  background-size: 65%;
+}
+.foodsix{
+  width: 300px;
+  height:200px;
+  position: relative;
+  bottom:700px;
+  left: 790px;
+  background-image: url(/images/soft-drinks.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 19px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  size
+}
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
