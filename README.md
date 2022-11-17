@@ -1,10 +1,9 @@
 # Software_Engineering_Group1
-This is the project for Software Engineering, created by Group 1
+This is the project for Software Engineering, created by Group 1\
 
 
 ## Requirements to run the project :-
 1. Node.js
-
 
 ## How to run the project :-
 1. Open the terminal in the project directory
@@ -14,6 +13,11 @@ This is the project for Software Engineering, created by Group 1
 " npm run watch "
 4. Run the following command to run normal version (wil have to execute this everytime you make a change)\
 " npm app.js" 
+
+## Making Changes :-
+Please create a separate branch for any changes or adding of features.\
+Once you have the feature working create a merge request w/ a brief description of your changes.\
+Someone will soon look at your request and merge it with the main branch.
 
 ## MangoDB :-
 I will invite everyone soon.
