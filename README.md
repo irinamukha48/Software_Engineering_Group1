@@ -12,7 +12,7 @@ This is the project for Software Engineering, created by Group 1
 " npm install "
 3. Run the following command to run live version (restarts the website automatically when chnages are made)\
 " npm run watch "
-4. Run the following command to run normal version (wil have to execute this evrytime you make a change)\
+4. Run the following command to run normal version (wil have to execute this everytime you make a change)\
 " npm app.js" 
 
 ## MangoDB :-
