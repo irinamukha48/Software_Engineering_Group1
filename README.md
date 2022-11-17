@@ -10,7 +10,7 @@ This is the project for Software Engineering, created by Group 1
 1. Open the terminal in the project directory
 2. Run the following command to install the dependencies\
 " npm install "
-3. Run the following command to run live version (restarts the website automatically when chnages are made)\
+3. Run the following command to run live version (restarts the website automatically when changes are made)\
 " npm run watch "
 4. Run the following command to run normal version (wil have to execute this everytime you make a change)\
 " npm app.js" 
@@ -18,7 +18,7 @@ This is the project for Software Engineering, created by Group 1
 ## MangoDB :-
 I will invite everyone soon.
 
-Databse Access :-\
+Database Access :-\
 Username : ECE_GrubHub_Admin\
 Password : DaJoUVFGGBzWVC7z\
-** Has all contorls. Please use it carefully **
+** Has all controls. Please use it carefully **
