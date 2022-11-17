@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="/css/register.css">
+  </head>
+  <body>
+    <div class="top">
+      <h1 style= "text-align: center; margin: 0 auto 0 auto; font-size: 30px; width: 50%; font-family: cursive; color: #16213E;position:relative;top:5px;left:10px;"
+      >Welcome To ECE Grubhub</h1>
+    </div>
+
+    <div class="middle">
+
+      <div class="login">
+        <div class="error">
+          <% if(messages.error) { %>
+          <%= messages.error %>
+              <% } %>
+        </div>
+        <h1 style= "text-align: center; margin: 0 auto 0 auto; font-size: 50px; width: 280px; height:150px;font-family: American Typewriter, serif; color: #002B5B; position: relative;
+        bottom: 20px;"
+        >Create User</h1>
+        <form action="/user/register" method="post">
+          <input type="text" placeholder="email-address" id="email" name="email" required required style="position:relative;top:-20px;" >
+          <input type="password" placeholder="password" id="password" name="password" required required style="position:relative;top:-30px;">
+          <input type="submit" value="Create User" style="position:relative;top:-42px;">
+          </form>
+
+          <form action="/user/login" method="get">
+            <input type="submit" value="Log In" style="position:relative;top:-48px;">
+          </form>
+
+        </div>
+        </div>
+    <div class="bottom">
+    </div>
+  </body>
+</html>
