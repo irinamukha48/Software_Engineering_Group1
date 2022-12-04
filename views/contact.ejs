@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title> Contacts</title>
+    <title>Contact</title>
+    <link rel="icon" href="images/homepage.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/contact.css">
   </head>
   <body>
-    <h1>Hello</h1>
+    <div class="main-block">
+      <div class="left-part">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-at"></i>
+        <i class="fas fa-mail-bulk"></i>
+      </div>
+      <form action="/contact" method="POST">
+        <h1>ECE GRUBHUB CONTACT </h1>
+        <div class="info">
+          <input type="text" id="name" name="name" placeholder="Full name" required>
+          <input type="text" id="email" name="email" placeholder="Email" required>
+          <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone number" required>
+        </div>
+        <p>Message</p>
+        <div>
+          <textarea rows="4" placeholder="Please Type Your message Here!!!!" required></textarea>
+        </div>
+        <button type="submit" href="#">Submit</button>
+      </form>
+    </div>
   </body>
 </html>

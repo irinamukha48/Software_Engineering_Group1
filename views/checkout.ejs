@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="css/checkout.css">
     <title>Check Out</title>
   </head>
-
+  
   <div class="main" style="width:100%;height:0px;">
-
+    <% if(messages.error) { %>
+      <%= messages.error %>
+         <% } %>
     <div class="left" >
       <h1 style= "text-align: center; margin: 0 auto 0 auto;width: 590px; font-family:Comic Sans MS; color:#355764;position:relative;top:30px;left:-15px;font-size:75px;"
       >Order Summary</h1>
@@ -52,47 +54,52 @@
 
         <label style="position:relative;left:10px;top:10px;"> First Name:</label>
         <label style="position:relative;left:220px;top:10px;"> Last Name:</label>
-        <br>
-        <input type="text" id="firstname" name="firstname" placeholder="First-Name" required style="position:relative;left:10px;top:10px;width:150px;height:20px;" >
-        <input type="text" id="lastname" name="lastname"  placeholder="Last-Name"   required  style="position:relative;left:130px;top:10px;width:150px;height:20px;" >
+        <br>  
+        <input type="text" id="firstname" name="firstname" placeholder="First-Name"  maxlength="15"required  style="position:relative;left:10px;top:10px;width:150px;height:20px;" >
+       
+        <input type="text" id="lastname" name="lastname"  placeholder="Last-Name" maxlength="15" required    style="position:relative;left:130px;top:10px;width:150px;height:20px;" >
         <br><br>
 
         <label style="position:relative;left:10px;top:10px;">Email:</label>
         <label style="position:relative;left:250px;top:10px;">Address:</label>
         <br>
-        <input type="text" id="emailaddress" name="emailaddress"         required style="position:relative;left:10px;top:10px;width:150px;height:20px;" >
-        <input type="text" id="address"      name="address"       required style="position:relative;left:130px;top:10px;width:150px;height:20px;" >
-
-
-      <div>
-        <h1 style="position:relative;left:10px;top:10px;"> Payment</h1>
-      <input type="radio" id="Credit Card" value="Credit Card" style="position:relative;left:10px;top:10px;">
-      <label for="Credit Card" style="position:relative;left:10px;top:10px;">Credit Card</label>
-      <br>
-
-      <input type="radio" id="Debit Card" value="Debit Card" style="position:relative;left:10px;top:10px;">
-      <label for="Debit Card" style="position:relative;left:10px;top:10px;">Debit Card</label>
-      <br>
-
-      <input type="radio" id="PayPal" value="PayPal" style="position:relative;left:10px;top:10px;">
-      <label for="PayPal" style="position:relative;left:10px;top:10px;" >PayPal</label>
-    </div> <br>
+        <input type="text" id="emailaddress" name="emailaddress" maxlength="22" placeholder="Email"               required        style="position:relative;left:10px;top:10px;width:150px;height:20px;" >
+        <input type="text" id="address"      name="address"      maxlength="32"      placeholder="Delivery Address"    required        style="position:relative;left:130px;top:10px;width:150px;height:20px;" >
+        
+        <div>
+          <h1 style="position:relative;left:10px;top:10px;"> Payment</h1>
+          <input type="radio" id="CreditCard" name="drone" value="huey"
+                 checked >
+          <label for="huey" style="position:relative;left:10px;">Credit Card</label>
+        </div>
+    
+        <div>
+          <input type="radio" id="dewey" name="drone" value="dewey">
+          <label for="dewey" style="position:relative;left:10px;">Debit Card</label>
+        </div>
+    
+        <div>
+          <input type="radio" id="louie" name="drone" value="louie">
+          <label for="louie" style="position:relative;left:10px;">PayPal</label>
+        </div>
+        <br>
 
      <label style="position:relative;left:10px;top:10px;"> Name on Card </label>
      <label style="position:relative;left:195px;top:10px;"> Credit Card Number</label>
      <br>
-     <input type="text" id="NameOnCard" name="NameOnCard"  placeholder="Name" required style="position:relative;left:10px;top:10px;width:150px;height:20px;" >
-     <input type="text" id="cardNumber" name="cardNumber"  placeholder="Card-Number" required style="position:relative;left:130px;top:10px;width:150px;height:20px;" >
+     <input type="text" id="NameOnCard" name="NameOnCard"  maxlength="22" placeholder="Name"        required   style="position:relative;left:10px;top:10px;width:150px;height:20px;" >
+     <input type="text" id="cardNumber" name="cardNumber"  maxlength="19"  placeholder="Card-Number" required   style="position:relative;left:130px;top:10px;width:150px;height:20px;" >
 
      <br><br>
      <label style="position:relative;left:10px;top:10px;"> Expiration </label>
-     <label style="position:relative;left:225px;top:10px;"> CVV</label>
+     <label style="position:relative;left:225px;top:10px;"> CVC</label>
      <br>
-     <input type="text" type="text" id="Expiration" name="Expiration"  placeholder="Exp-Date" required style="position:relative;left:10px;top:10px;width:100px;height:20px;" >
-     <input type="text" type="text" id="cvv" name="cvv"  placeholder="cvv" required style="position:relative;left:180px;top:10px;width:100px;height:20px;" >
+     <input type="text"  id="month" name="month"  maxlength="2"              placeholder="MM"      required style="position:relative;left:10px;top:10px;width:50px;height:20px;" >
+     <input type="text"  id="year" name="year"    maxlength="4"              placeholder="YYYY"     required style="position:relative;left:30px;top:10px;width:70px;height:20px;" >
+     <input type="text"  id="cvv" name="cvv"      maxlength="4"                     placeholder="CVC"        required style="position:relative;left:150px;top:10px;width:100px;height:20px;" >
       </div>
 
-        <button type="submit" class="button1"name="Process Order" style="position:relative;top:120px;left:280px;width:150px;height:50px;font-size:19px;">Order Now</button >
+        <button type="submit" class="button1"name="Process Order"  style="position:relative;top:120px;left:280px;width:150px;height:50px;font-size:19px;">Order Now</button >
 
 
     </div>

@@ -10,7 +10,7 @@ passport.serializeUser(function(user, done) {
 });
 
 /**
-* passport deserializeUser 
+* passport deserializeUser
 */
 passport.deserializeUser(function(id, done) {
     User.findById(id, function(err, user) {
@@ -28,7 +28,7 @@ passport.use('register', new localStrategy({
 }, (req,email,password, done)=> {
     //if (req.body.password != req.body.confirm_password) {
     //    return done(null, false, req.flash('error', 'Passwords do not match'))
-    //} 
+    //}
     //else {
         // find user by email
         User.findOne({email: email}, (err,user)=> {
@@ -80,9 +80,9 @@ passport.use('login', new localStrategy({
 
         if (err) {
             return done(err)
-        } 
+        }
         if(!user) {
-            // return the wrong user back 
+            // return the wrong user back
 
             let wrongUser = new User();
             //newUser.first_name = req.body.firstname

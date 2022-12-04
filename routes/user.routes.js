@@ -46,4 +46,5 @@ failureFlash: true }
 router.get("/login",checkNotAuthenticated ,userController.render_login);
 
 
+
 module.exports = router;
