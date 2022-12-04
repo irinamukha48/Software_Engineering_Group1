@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Order</title>
+    <link rel="icon" href="images/homepage.ico">
+    <link rel="stylesheet" href="css/restTwo.css">
+  </head>
+  <body>
+    <div class="main" style = "height:800px;">
+
+    <div class="order">
+      <h1 style="color:White;position:relative;top:30px;text-align:center"> Your Cart</h1>
+      <ul>
+        <br><br>
+
+        <form action="/order" method="POST">
+          <li style= "color:white;"> Orange Chicken &emsp; &emsp;<span > <%= val0%> </span><br><br><button  type="submit" name="add" class= "button button1" > ADD</button>&emsp; <button type="submit" name="remove" class= "button button1" > Remove </button> </li>
+          <br><br>
+          <li style= "color:white;"> Sweet & Sour Pork &emsp; &emsp;<span > <%= val1%> </span><br><br><button type="submit" name="add1" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove1" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;"> Fried Noodles &emsp; &emsp;<span > <%= val2%> <br><br><button type="submit" name="add2" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove2" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;"> Beef Chow Mein &emsp; &emsp;<span > <%= val3%> <br><br><button type="submit" name="add3" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove3" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;"> Steamed Dumplings &emsp; &emsp;<span > <%= val4%> <br><br><button type="submit" name="add4" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove4" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;"> Spring Rolls &emsp; &emsp;<span > <%= val5%> <br><br><button type="submit" name="add5" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove5" class= "button button1"> Remove</button></li>
+        </ul>
+        </form>
+
+        <form  action='/ChineseCuisine/Checkout' method="get">
+          <button type="submit" class= "button button1" style="position:relative;top:5px;left:60px;width:150px;height:50px;font-size:15px;font-weight: bold;">CHECK OUT</button>
+        </form>
+
+
+    </div>
+
+    <div class="upper">
+      <h1 style= "text-align: center; margin: 0 auto 0 auto;font-family:Comic Sans MS; color:#DFD3C3;position:relative;top:40px;left:-300px;"
+      > FUJIAN CHINESE CUISINE</h1>
+
+    </div>
+
+    <div class="middle">
+      <div class="foodOne">
+        <div class="fries">
+        <h1 style="position:relative;bottom:70px;left:40px;" >Orange Chicken</h1>
+        </div>
+      </div>
+
+      <div class="foodtwo">
+        <div class="burger">
+          <h1 style="position:relative;bottom:50px;" >Sweet & Sour Pork</h1>
+        </div>
+      </div>
+
+      <div class="foodthree">
+        <div class="Pizza">
+        <h1 style="position:relative;bottom:60px;left:20px;">Fried Noodles</h1>
+        </div>
+      </div>
+
+      <div class="foodfour">
+        <div class="fried">
+        <h1 style="position:relative;bottom:70px;left:40px;">Beef Chow Mein</h1>
+        </div>
+      </div>
+
+      <div class="foodfive">
+        <div class="salad">
+          <h1 style="position:relative;bottom:50px;left:30px; width:280px;">Steamed Dumplings</h1>
+        </div>
+      </div>
+
+      <div class="foodsix">
+        <div class="softdrinks">
+          <h1 style="position:relative;bottom:69px;left:80px; width:250px;">Spring Rolls</h1>
+        </div>
+      </div>
+
+
+    </div>
+      </div>
+  </body>
+</html>

@@ -66,12 +66,39 @@ const contact = require('./routes/contact.route');
 app.use('/contact', contact);
 
 //config for Rest One page
-const resOne = require('./routes/restaurants1.route');
-app.use('/order', resOne);
+const restOne = require('./routes/restaurants1.route');
+app.use('/RutgersECEFastFood', restOne);
 
 //config for Rest One Checkout
 const resOneCheckout = require('./routes/resOneCheckout.route');
 app.use('/checkout', resOneCheckout);
+
+//config for Rest Two page
+const restTwo = require('./routes/restaurants2.route');
+app.use('/ChineseCuisine', restTwo);
+
+//config for Rest Two Checkout
+const resTwoCheckout = require('./routes/resTwoCheckout.route');
+app.use('/ChineseCuisine/Checkout', resTwoCheckout);
+
+
+
+//config for Rest Three page
+const restThree = require('./routes/restaurants3.route');
+app.use('/JapaneseCuisine', restThree);
+
+
+
+
+//config for Rest Three page
+const restFour = require('./routes/restaurants4.route');
+app.use('/GermanCuisine', restFour);
+
+
+
+//config for Contact Success Page
+const contactSuccess = require('./routes/contactSuccess.route');
+app.use('/contact/Success', contactSuccess);
 
 
 app.get("/logout", function(req, res){
@@ -89,6 +116,8 @@ app.get("/home",function(req,res){
      res.redirect('/user/login');
     }
 });
+
+
 
 
 app.get("/success",function(req,res){

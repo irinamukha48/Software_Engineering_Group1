@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Order</title>
+    <link rel="icon" href="images/homepage.ico">
+    <link rel="stylesheet" href="css/restFour.css">
+  </head>
+  <body>
+    <div class="main" style = "height:800px;">
+
+    <div class="order">
+      <h1 style="color:White;position:relative;top:30px;text-align:center"> Your Cart</h1>
+      <ul>
+        <br><br>
+
+        <form action="/order" method="POST">
+          <li style= "color:white;"> Apple Pie &emsp; &emsp;<span > <%= val0%> </span><br><br><button  type="submit" name="add" class= "button button1" > ADD</button>&emsp; <button type="submit" name="remove" class= "button button1" > Remove </button> </li>
+          <br><br>
+          <li style= "color:white;"> CurryWurst &emsp; &emsp;<span > <%= val1%> </span><br><br><button type="submit" name="add1" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove1" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;"> Doner Kebab &emsp; &emsp;<span > <%= val2%> <br><br><button type="submit" name="add2" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove2" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;">Maultaschen &emsp; &emsp;<span > <%= val3%> <br><br><button type="submit" name="add3" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove3" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;"> Rouladen &emsp; &emsp;<span > <%= val4%> <br><br><button type="submit" name="add4" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove4" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;"> Weisswurst &emsp; &emsp;<span > <%= val5%> <br><br><button type="submit" name="add5" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove5" class= "button button1"> Remove</button></li>
+        </ul>
+        </form>
+
+        <form  action='/checkout' method="get">
+          <button type="submit" class= "button button1" style="position:relative;top:5px;left:60px;width:150px;height:50px;font-size:15px;font-weight: bold;">CHECK OUT</button>
+        </form>
+
+
+    </div>
+
+    <div class="upper">
+      <h1 style= "text-align: center; margin: 0 auto 0 auto;font-family:Comic Sans MS; color:#DFD3C3;position:relative;top:40px;left:-300px;"
+      >Königsberger GERMAN CUISINE</h1>
+
+    </div>
+
+    <div class="middle">
+      <div class="foodOne">
+        <div class="fries">
+        <h1 style="position:relative;bottom:70px;left:90px;" >Apple Pie</h1>
+        </div>
+      </div>
+
+      <div class="foodtwo">
+        <div class="burger">
+          <h1 style="position:relative;bottom:50px;left:40px;" >CurryWurst</h1>
+        </div>
+      </div>
+
+      <div class="foodthree">
+        <div class="Pizza">
+        <h1 style="position:relative;bottom:60px;left:30px;">Doner Kebab</h1>
+        </div>
+      </div>
+
+      <div class="foodfour">
+        <div class="fried">
+        <h1 style="position:relative;bottom:70px;left:50px;">Maultaschen</h1>
+        </div>
+      </div>
+
+      <div class="foodfive">
+        <div class="salad">
+          <h1 style="position:relative;bottom:70px;left:70px; width:280px;">Rouladen</h1>
+        </div>
+      </div>
+
+      <div class="foodsix">
+        <div class="softdrinks">
+          <h1 style="position:relative;bottom:70px;left:40px; width:250px;">Weisswurst</h1>
+        </div>
+      </div>
+
+
+    </div>
+      </div>
+  </body>
+</html>

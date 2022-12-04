@@ -7,12 +7,16 @@
     <title>Profile</title>
   </head>
   <body>
-    <h1>Hello</h1>
-   <input type="text" id="firstname" name="firstname"  maxlength="24" required >
+    <form action="/profile" method="get">
+      <h1>Hello <%= name%></h1> 
+    </form>
 
-   <form action="/profile" method="POST">
-    <button type="submit" >Order Now</button >
-   </form>
+    <form action="/logout" method="delete">
+      <button type="submit">Log Out!</button>
+    </form>
+    
+
+   
    
     
   </body>

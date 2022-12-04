@@ -17,16 +17,19 @@
       <form action="/contact" method="POST">
         <h1>ECE GRUBHUB CONTACT </h1>
         <div class="info">
-          <input type="text" id="name" name="name" placeholder="Full name" required>
-          <input type="text" id="email" name="email" placeholder="Email" required>
-          <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone number" required>
+          <input type="text" id="name" name="name" placeholder="Name"  maxlength="20" required>
+          <input type="text" id="email" name="email" placeholder="Email" maxlength="30" required>
+          <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone number" maxlength="30" required>
         </div>
         <p>Message</p>
         <div>
-          <textarea rows="4" placeholder="Please Type Your message Here!!!!" required></textarea>
+          <textarea rows="4" name="message" placeholder="Please Type Your message Here!!!!" required></textarea>
         </div>
-        <button type="submit" href="#">Submit</button>
+        <form action="/contact/Success" method="GET">
+          <button type="submit" >Submit</button>
+        </form>
       </form>
+        
     </div>
   </body>
 </html>

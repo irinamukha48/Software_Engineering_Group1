@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Order</title>
+    <link rel="icon" href="images/homepage.ico">
+    <link rel="stylesheet" href="css/order.css">
+  </head>
+  <body>
+    <div class="main" style = "height:800px;">
+
+    <div class="order">
+      <h1 style="color:White;position:relative;top:30px;text-align:center"> Your Cart</h1>
+      <ul>
+        <br><br>
+
+        <form action="/RutgersECEFastFood" method="POST">
+          <li style= "color:white;"> Classic Fries &emsp; &emsp;<span > <%= val0%> </span><br><br><button  type="submit" name="add" class= "button button1" > ADD</button>&emsp; <button type="submit" name="remove" class= "button button1" > Remove </button> </li>
+          <br><br>
+          <li style= "color:white;"> Juciy Burger &emsp; &emsp;<span > <%= val1%> </span><br><br><button type="submit" name="add1" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove1" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;"> Chessey Pizza &emsp; &emsp;<span > <%= val2%> <br><br><button type="submit" name="add2" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove2" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;"> Fat Fried Chicken &emsp; &emsp;<span > <%= val3%> <br><br><button type="submit" name="add3" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove3" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;"> Leafy Salad &emsp; &emsp;<span > <%= val4%> <br><br><button type="submit" name="add4" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove4" class= "button button1"> Remove</button></li>
+          <br><br>
+          <li style= "color:white;"> Soft Drinks &emsp; &emsp;<span > <%= val5%> <br><br><button type="submit" name="add5" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove5" class= "button button1"> Remove</button></li>
+        </ul>
+        </form>
+
+        <form  action='/checkout' method="get">
+          <button type="submit" class= "button button1" style="position:relative;top:5px;left:60px;width:150px;height:50px;font-size:15px;font-weight: bold;">CHECK OUT</button>
+        </form>
+
+
+    </div>
+
+    <div class="upper">
+      <h1 style= "text-align: center; margin: 0 auto 0 auto;font-family:Comic Sans MS; color:#DFD3C3;position:relative;top:40px;left:-120px;;"
+      > Rutgers Electrical and Computer Engineering Fast Food</h1>
+
+    </div>
+
+    <div class="middle">
+      <div class="foodOne">
+        <div class="fries">
+        <h1 style="position:relative;bottom:70px;left:40px;" >Classic Fries</h1>
+        </div>
+      </div>
+
+      <div class="foodtwo">
+        <div class="burger">
+          <h1 style="position:relative;bottom:63px;left:40px;" >Juicy Burger</h1>
+        </div>
+      </div>
+
+      <div class="foodthree">
+        <div class="Pizza">
+        <h1 style="position:relative;bottom:65px;left:20px;">Chessey Pizza</h1>
+        </div>
+      </div>
+
+      <div class="foodfour">
+        <div class="fried">
+        <h1 style="position:relative;bottom:40px;left:40px;">Fried Chicken</h1>
+        </div>
+      </div>
+
+      <div class="foodfive">
+        <div class="salad">
+          <h1 style="position:relative;bottom:50px;left:10px; width:250px;">Leafy Salad</h1>
+        </div>
+      </div>
+
+      <div class="foodsix">
+        <div class="softdrinks">
+          <h1 style="position:relative;bottom:69px;left:80px; width:250px;">Soft Drinks</h1>
+        </div>
+      </div>
+
+
+    </div>
+      </div>
+
+  </body>
+</html>

@@ -22,7 +22,7 @@ router.get("/",function(req,res){
   resOne.save();
 
   Order.findOne({},function(err,founditems){
-    res.render("order",{val0:founditems.classicFires
+    res.render("restOne",{val0:founditems.classicFires
       ,val1:founditems.JuicyBurger,
       val2:founditems.ChessyPizza,
       val3:founditems.FriedChicken,
@@ -195,7 +195,7 @@ router.get("/",function(req,res){
 
       
     }
-    res.redirect("order");
+    res.redirect("/RutgersECEFastFood");
 });
 
 
