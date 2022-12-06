@@ -1,95 +1,4 @@
-.body{
-    margin-top: 0px;
-  }
-  .order{
-    height:860px;
-    width: 300px;
-    position: relative;
-    left:1138px;
-    bottom:30px;
-    background-color:#2C3333;
-  }
-  
-  .upper{
-    height: 150px;
-    width: 1138px;
-    background-color:#395B64;
-    position: relative;
-    bottom:910px;
-    right:8px;
-    border: 4px solid;
-    border-color: #7895B2;
-  }
-  .middle{
-    height:718px;
-    width: 1143px;
-    background-color:#E7F6F2;
-    position: relative;
-    bottom:910px;
-    right:8px;
-    border: 2px solid;
-    border-color: #7895B2;
-  }
-  .foodOne{
-    width: 300px;
-    height:200px;
-    position: relative;
-    top:60px;
-    left: 20px;
-    background-image: url(/images/GermanImg/applepie.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-  .foodtwo{
-    width: 300px;
-    height:210px;
-    position: relative;
-    bottom:180px;
-    left: 450px;
-    background-image: url(/images/GermanImg/cuurywurry.png);
-    background-repeat: no-repeat;
-    background-size: 90%;
-  }
-  .foodthree{
-    width: 300px;
-    height:200px;
-    position: relative;
-    bottom:400px;
-    left: 820px;
-    background-image: url(/images/GermanImg/kebab.png);
-    background-repeat: no-repeat;
-    background-size: 90%;
-  }
-  .foodfour{
-    width: 300px;
-    height:200px;
-    position: relative;
-    bottom:260px;
-    left: 50px;
-    background-image: url(/images/GermanImg/Maultaschen.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-  .foodfive{
-    width: 330px;
-    height:200px;
-    position: relative;
-    bottom:480px;
-    left: 420px;
-    background-image: url(/images/GermanImg/rouladen.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-  .foodsix{
-    width: 300px;
-    height:200px;
-    position: relative;
-    bottom:710px;
-    left: 830px;
-    background-image: url(/images/GermanImg/Weisswurst.png);
-    background-repeat: no-repeat;
-    background-size: 80%;
-  }
+
   .button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -109,9 +18,8 @@
     color: black;
     border: 2px solid #4CAF50;
   }
-  
+
   .button1:hover {
     background-color: #4CAF50;
     color: white;
   }
-  

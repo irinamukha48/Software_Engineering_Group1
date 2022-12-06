@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="/css/register.css">
   </head>
   <body>
@@ -24,14 +24,35 @@
         bottom: 20px;"
         >Create User</h1>
         <form action="/user/register" method="post">
-          <input type="text" placeholder="email-address" id="email" name="email" required required style="position:relative;top:-20px;" >
-          <input type="password" placeholder="password" id="password" name="password" required required style="position:relative;top:-30px;">
+          <label for="email" style="position:relative;bottom:30px;left:20px"> Email Address</label>
+          <input type="text" placeholder="email-address" id="email" name="email" required  style="position:relative;bottom:30px ;" >
+
+          <label for="address" style="position:relative;left:20px; bottom: 30px;">Delivery Address </label>
+          <input type="text" placeholder="Delivery Address" id="address" name="address" required  style="position:relative;bottom:30px ;" >
+
+          <label for="name" style="position:relative;left:10px;bottom:30px;left:20px;">Full Name</label>
+          <input type="text" placeholder="Full Name" id="name" name="name" required  style="position:relative;bottom: 30px;left:20px;" >
+
+          <label for="vendor" style="position:relative;left:50px;bottom: 30px;"> Vendor</label>
+          <input type="text" placeholder="Yes/No" id="vendor" name="vendor" required  style="position:relative;left:86px;bottom:30px;"  maxlength="3">
+          
+          <label for="username" style="position:relative;right:650px;top: 35px;">Username</label>
+          <input type="text" placeholder="username" id="username" name="username" required  style="position:relative;left:95px;bottom:30px;" >
+
+          <label for="password" style="position:relative;left:129px;bottom:25px;">Password</label>
+          <input type="text" placeholder="Password" id="password" name="password" required  style="position:relative;left:145px;bottom:30px;" >
+
           <input type="submit" value="Create User" style="position:relative;top:-42px;">
           </form>
 
+  
+
           <form action="/user/login" method="get">
-            <input type="submit" value="Log In" style="position:relative;top:-48px;">
+            <div class="LoginUser">
+              <input type="submit" value="Log In" >
+            </div>
           </form>
+
 
         </div>
         </div>

@@ -42,12 +42,17 @@ passport.use('register', new localStrategy({
             }
             if (!user) {
                 // create new User object
+                
                 let newUser = new User()
                 //newUser.first_name = req.body.firstname
                 //newUser.last_name = req.body.lastname
                 //newUser.phone = req.body.phone
-                newUser.email = req.body.email
+                newUser.email    = req.body.email
                 newUser.password = newUser.generateEncryptedPassword(req.body.password)
+                newUser.deliveryAddress  = req.body.address
+                newUser.username = req.body.username
+                newUser.vendor   = req.body.vendor
+                newUser.name     = req.body.name
                 //newUser.avatar = "profile.png"
                 //newUser.role = req.body.role
                 newUser.created_at = Date.now()

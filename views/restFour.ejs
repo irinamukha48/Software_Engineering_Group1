@@ -3,84 +3,85 @@
   <head>
     <meta charset="utf-8">
     <title>Order</title>
-    <link rel="icon" href="images/homepage.ico">
+    <link rel="icon" href="/images/homepage.ico">
     <link rel="stylesheet" href="css/restFour.css">
   </head>
-  <body>
+  <body style="margin-top: 0px;" >
     <div class="main" style = "height:800px;">
 
-    <div class="order">
-      <h1 style="color:White;position:relative;top:30px;text-align:center"> Your Cart</h1>
-      <ul>
-        <br><br>
-
-        <form action="/order" method="POST">
-          <li style= "color:white;"> Apple Pie &emsp; &emsp;<span > <%= val0%> </span><br><br><button  type="submit" name="add" class= "button button1" > ADD</button>&emsp; <button type="submit" name="remove" class= "button button1" > Remove </button> </li>
+      <div style="height:860px;width: 300px;position: relative;left:1138px;bottom:30px;background-color:#2C3333;">
+        <h1 style="color:White;position:relative;top:30px;text-align:center"> Your Cart</h1>
+        <ul>
           <br><br>
-          <li style= "color:white;"> CurryWurst &emsp; &emsp;<span > <%= val1%> </span><br><br><button type="submit" name="add1" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove1" class= "button button1"> Remove</button></li>
-          <br><br>
-          <li style= "color:white;"> Doner Kebab &emsp; &emsp;<span > <%= val2%> <br><br><button type="submit" name="add2" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove2" class= "button button1"> Remove</button></li>
-          <br><br>
-          <li style= "color:white;">Maultaschen &emsp; &emsp;<span > <%= val3%> <br><br><button type="submit" name="add3" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove3" class= "button button1"> Remove</button></li>
-          <br><br>
-          <li style= "color:white;"> Rouladen &emsp; &emsp;<span > <%= val4%> <br><br><button type="submit" name="add4" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove4" class= "button button1"> Remove</button></li>
-          <br><br>
-          <li style= "color:white;"> Weisswurst &emsp; &emsp;<span > <%= val5%> <br><br><button type="submit" name="add5" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove5" class= "button button1"> Remove</button></li>
-        </ul>
-        </form>
 
-        <form  action='/checkout' method="get">
-          <button type="submit" class= "button button1" style="position:relative;top:5px;left:60px;width:150px;height:50px;font-size:15px;font-weight: bold;">CHECK OUT</button>
-        </form>
+          <form action= <%= actionVal%> method="post">
+            <li style= "color:white;"> <%=productOne%> &emsp; &emsp;<span > <%=productOneQuality%> </span><br><br><button  type="submit" name="add" class= "button button1" > ADD</button>&emsp; <button type="submit" name="remove" class= "button button1" > Remove </button> </li>
+            <br><br>
+            <li style= "color:white;"> <%=productTwo%> &emsp; &emsp;<span > <%=productTwoQuality%> </span><br><br><button type="submit" name="add1" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove1" class= "button button1"> Remove</button></li>
+            <br><br>
+            <li style= "color:white;"> <%=productThree%> &emsp; &emsp;<span > <%=productThreeQuality%> <br><br><button type="submit" name="add2" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove2" class= "button button1"> Remove</button></li>
+            <br><br>
+            <li style= "color:white;"> <%=productFour%> &emsp; &emsp;<span > <%=productFourQuality%>  <br><br><button type="submit" name="add3" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove3" class= "button button1"> Remove</button></li>
+            <br><br>
+            <li style= "color:white;"> <%=productFive%> &emsp; &emsp;<span > <%=productFiveQuality%> <br><br><button type="submit" name="add4" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove4" class= "button button1"> Remove</button></li>
+            <br><br>
+            <li style= "color:white;"> <%=productSix%> &emsp; &emsp;<span > <%=productSixQuality%> <br><br><button type="submit" name="add5" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove5" class= "button button1"> Remove</button></li>
+          </ul>
+          </form>
+
+          <form  action='/checkout' method="get">
+            <button type="submit" class= "button button1" style="position:relative;top:5px;left:60px;width:150px;height:50px;font-size:15px;font-weight: bold;">CHECK OUT</button>
+          </form>
 
 
-    </div>
-
-    <div class="upper">
-      <h1 style= "text-align: center; margin: 0 auto 0 auto;font-family:Comic Sans MS; color:#DFD3C3;position:relative;top:40px;left:-300px;"
-      >Königsberger GERMAN CUISINE</h1>
-
-    </div>
-
-    <div class="middle">
-      <div class="foodOne">
-        <div class="fries">
-        <h1 style="position:relative;bottom:70px;left:90px;" >Apple Pie</h1>
-        </div>
       </div>
 
-      <div class="foodtwo">
-        <div class="burger">
-          <h1 style="position:relative;bottom:50px;left:40px;" >CurryWurst</h1>
-        </div>
+      <div style="height: 150px;width: 1138px;background-color:#395B64;position: relative;bottom:910px;right:8px;border: 4px solid;border-color: #7895B2;">
+        <h1 style= "text-align: center; margin: 0 auto 0 auto;font-family:Comic Sans MS; color:#DFD3C3;position:relative;top:70px;right:360px;"
+        >  <%= restaurantname%></h1>
+
       </div>
 
-      <div class="foodthree">
-        <div class="Pizza">
-        <h1 style="position:relative;bottom:60px;left:30px;">Doner Kebab</h1>
+      <div style="height:718px;width: 1143px;background-color:#E7F6F2;position: relative;bottom:910px;right:8px;border: 2px solid;border-color: #7895B2;">
+        <div style="width: 300px;height:200px;position: relative;top:60px;left: 20px;background-image: url(<%= productOneImage%>);background-repeat: no-repeat;background-size: 80%;">
+          <div class="fries">
+          <h1 style="position:relative;bottom:70px;left:40px;" > <%=productOne%> </h1>
+          </div>
         </div>
+
+        <div style="width: 300px;height:210px;position: relative;bottom:180px;left: 450px;background-image: url(<%= productTwoImage%>);background-repeat: no-repeat;background-size: 70%;">
+          <div class="burger">
+            <h1 style="position:relative;bottom:50px;left:40px;" > <%=productTwo%> </h1>
+          </div>
+        </div>
+
+        <div style="width: 300px;height:200px;position: relative;bottom:400px;left: 820px;background-image: url(<%= productThreeImage%>);background-repeat: no-repeat;background-size: 70%;">
+          <div class="Pizza">
+          <h1 style="position:relative;bottom:60px;left:30px;"> <%=productThree%> </h1>
+          </div>
+        </div>
+
+        <div style="width: 300px;height:200px;position: relative;bottom:260px;left: 50px;background-image: url(<%= productFourImage%>);background-repeat: no-repeat;background-size: 90%;">
+          <div class="fried">
+          <h1 style="position:relative;bottom:70px;"> <%=productFour%> </h1>
+          </div>
+        </div>
+
+        <div style="width: 330px;height:200px;position: relative;bottom:480px;left: 420px;background-image: url(<%= productFiveImage%>);background-repeat: no-repeat;background-size: 90%;">
+          <div class="salad">
+            <h1 style="position:relative;bottom:70px;left:30px; width:280px;"> <%=productFive%> </h1>
+          </div>
+        </div>
+
+        <div style="width: 300px;height:200px;position: relative;bottom:710px;left: 830px;background-image: url(<%= productSixImage%>);background-repeat: no-repeat;background-size: 80%;">
+          <div class="softdrinks">
+            <h1 style="position:relative;bottom:70px;left:40px; width:250px;"> <%=productSix%> </h1>
+          </div>
+        </div>
+
+
       </div>
 
-      <div class="foodfour">
-        <div class="fried">
-        <h1 style="position:relative;bottom:70px;left:50px;">Maultaschen</h1>
-        </div>
-      </div>
-
-      <div class="foodfive">
-        <div class="salad">
-          <h1 style="position:relative;bottom:70px;left:70px; width:280px;">Rouladen</h1>
-        </div>
-      </div>
-
-      <div class="foodsix">
-        <div class="softdrinks">
-          <h1 style="position:relative;bottom:70px;left:40px; width:250px;">Weisswurst</h1>
-        </div>
-      </div>
-
-
-    </div>
       </div>
   </body>
 </html>

@@ -16,16 +16,15 @@ const UserOrder = require('../models/UserOrder');
 
 router.get("/",function(req,res){
 
-    Order.findOne({},function(err,founditems){
-      //console.log(founditems);
-      res.render("checkout",{prod1:founditems.classicFires
-        ,prod2:founditems.JuicyBurger,
-        prod3:founditems.ChessyPizza,
-        prod4:founditems.FriedChicken,
-        prod5:founditems.LeafySalad,
-        prod6:founditems.SoftDrinks});
-    })
-      
+    res.render("checkout",{prod1:0,prod2:0,prod3:0,
+    prod4:0,prod5:0,prod6:0,
+    productOne:"https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    productTwo:"https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    productThree:"https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    productFour:"https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    productFive:"https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    productSix:"https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png"})
+
     });
 
 router.post("/",
@@ -50,7 +49,7 @@ check("emailaddress",'Invalid email address ')
 check("address"," ")
 .notEmpty()
 .withMessage('Address required')
-.isLength({min: 3,max:32})       
+.isLength({min: 3,max:32})
 .matches('[0-9]').withMessage('Enter a Valid Delivery Address') //has Number
 .matches('[a-z]').withMessage('Enter a Valid Delivery Address') //Also has Letters
 ,
@@ -79,8 +78,8 @@ if(!errors.isEmpty()){
     req.flash('error',error.msg)
     console.log(error.msg)
   })
-  
-  
+
+
 }
 
   if (creditcardutils.validateCardNumber(CardNumber)=== false){
@@ -99,7 +98,7 @@ if(!errors.isEmpty()){
       if (err){
         //console.log(err)
     }else{
-        //console.log("Result :", result) 
+        //console.log("Result :", result)
     }
       var UserOrdertest = UserOrder({
         email          : Email,
@@ -118,9 +117,9 @@ if(!errors.isEmpty()){
       res.redirect("success");
 
     })
-    
+
   }
-  
+
 })
 
 

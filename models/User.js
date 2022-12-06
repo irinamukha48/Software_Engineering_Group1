@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
 
     username: {
         type: String,
+        required: true, 
     },
 
     email: {
@@ -16,33 +17,26 @@ const userSchema = new mongoose.Schema({
         required: true, 
     },
 
-    /*
-    first_name: {
+    
+    name: {
         type: String,
         required: true
     },
-
-    last_name: {
-        type: String,
-        required: true
-    },
-    */
 
     password: {
         type: String,
         required: true
     },
-
-    /*
-    active: 
-    {
-        type: Boolean,
+    vendor:{
+        type: String,
         required: true
     },
-    */
-
-    /*
-    order: [{
+    deliveryAddress:{
+        type: String,
+        required: true
+    },
+    
+    /*order: [{
         
         orderNo: {
             type: String 
@@ -51,21 +45,16 @@ const userSchema = new mongoose.Schema({
             type : mongoose.Schema.ObjectID
         }
     }],
-    */
-
-    /*
+ 
     phone: {
         type: String
     },
     */
-
     created_at: {
         type: Date,
         default: Date.now,
         required: true
     },
-    
-
     
 })
 

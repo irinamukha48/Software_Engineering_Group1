@@ -2,12 +2,20 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 var orderSchema = new mongoose.Schema({
-  classicFires : Number,
-  JuicyBurger  : Number,
-  ChessyPizza  : Number,
-  FriedChicken : Number,
-  LeafySalad   : Number,
-  SoftDrinks   : Number
+  restaurantname    : String,
+  productOnename    : String,
+  productOnequality : Number,
+  productTwoname    : String,
+  productTwoquality : Number,
+  productThreename    : String,
+  productThreequality : Number,
+  productFourname    : String,
+  productFourquality : Number,
+  productFivename    : String,
+  productFivequality : Number,
+  productSixname    : String,
+  productSixquality : Number,
+
 });
 
 

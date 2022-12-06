@@ -3,38 +3,35 @@
   <head>
     <meta charset="utf-8">
     <link rel="icon" href="images/homepage.ico">
-    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="/css/checkout.css">
     <title>Check Out</title>
   </head>
-  
-  <div class="main" style="width:100%;height:0px;">
-    <% if(messages.error) { %>
-      <%= messages.error %>
-         <% } %>
+
+  <div class="main" style="width:100%;height:0px;margin:0px;">
     <div class="left" >
       <h1 style= "text-align: center; margin: 0 auto 0 auto;width: 590px; font-family:Comic Sans MS; color:#355764;position:relative;top:30px;left:-15px;font-size:75px;"
       >Order Summary</h1>
       <div class="box1">
         <h1 style="position:relative;left:160px;"> Your Cart</h1>
 
-        <form action="/checkout" method="get">
+        <form action= <%= actionVal%> method="get">
           <div class="product1">
-            <img src="images/fries.png" alt="Fries" style="position:relative;height:70px;width:120px;">
+            <img src= <%= productOne%>  style="position:relative;height:70px;width:100px;">
             <p name="product1" style="position:relative;left:50px;"> <%= prod1 %> </p>
 
-            <img src="images/burger.png" alt="Burger" style="position:relative;height:70px;width:120px;position:relative;left:170px;top:-120px;">
+            <img src= <%= productTwo%>  style="position:relative;height:70px;width:100px;position:relative;left:170px;top:-120px;">
             <p name="product2" style="position:relative;left:220px; top:-125px;"> <%= prod2 %> </p>
 
-            <img src="images/pizzapic.png" alt="Pizza" style="position:relative;height:70px;width:120px;top:-250px;left:340px;">
+            <img src= <%= productThree%>  style="position:relative;height:70px;width:100px;top:-250px;left:340px;">
             <p name="product3" style="position:relative;left:400px;top:-250px;"> <%= prod3 %> </p>
 
-            <img src="images/friedChicken.png" alt="Fried-Chicken" style="position:relative;height:70px;width:120px;top:-250px;">
+            <img src= <%= productFour%> style="position:relative;height:70px;width:100px;top:-250px;">
             <p name="product4" style="position:relative;left:50px;top:-250px;"> <%= prod4 %> </p>
 
-            <img src="images/salad.png" alt="Salad" style="position:relative;height:70px;width:120px;position:relative;left:170px;top:-371px;">
+            <img src= <%= productFive%> style="position:relative;height:70px;width:100px;position:relative;left:170px;top:-371px;">
             <p name="product5" style="position:relative;left:220px; top:-373px;"> <%= prod5 %> </p>
 
-            <img src="images/soft-drinks.png" alt="Soft-Drinks" style="position:relative;height:70px;width:120px;position:relative;left:330px;top:-490px;">
+            <img src=<%= productSix%>  style="position:relative;height:70px;width:100px;position:relative;left:330px;top:-490px;">
             <p name="product5" style="position:relative;left:380px; top:-499px;"> <%= prod6 %> </p>
 
 
@@ -54,9 +51,9 @@
 
         <label style="position:relative;left:10px;top:10px;"> First Name:</label>
         <label style="position:relative;left:220px;top:10px;"> Last Name:</label>
-        <br>  
+        <br>
         <input type="text" id="firstname" name="firstname" placeholder="First-Name"  maxlength="15"required  style="position:relative;left:10px;top:10px;width:150px;height:20px;" >
-       
+
         <input type="text" id="lastname" name="lastname"  placeholder="Last-Name" maxlength="15" required    style="position:relative;left:130px;top:10px;width:150px;height:20px;" >
         <br><br>
 
@@ -65,19 +62,19 @@
         <br>
         <input type="text" id="emailaddress" name="emailaddress" maxlength="22" placeholder="Email"               required        style="position:relative;left:10px;top:10px;width:150px;height:20px;" >
         <input type="text" id="address"      name="address"      maxlength="32"      placeholder="Delivery Address"    required        style="position:relative;left:130px;top:10px;width:150px;height:20px;" >
-        
+
         <div>
           <h1 style="position:relative;left:10px;top:10px;"> Payment</h1>
           <input type="radio" id="CreditCard" name="drone" value="huey"
                  checked >
           <label for="huey" style="position:relative;left:10px;">Credit Card</label>
         </div>
-    
+
         <div>
           <input type="radio" id="dewey" name="drone" value="dewey">
           <label for="dewey" style="position:relative;left:10px;">Debit Card</label>
         </div>
-    
+
         <div>
           <input type="radio" id="louie" name="drone" value="louie">
           <label for="louie" style="position:relative;left:10px;">PayPal</label>

@@ -10,8 +10,9 @@ const flash = require('express-flash');
 const session = require('express-session');
 const passport = require('passport');
 const passportSetup = require('./config/passport-setup');
-const resturantSetup = require("./seed/resturant.seeder"); // remove this once we have resturants in databse
 const client = require("twilio")(process.env.ACCOUNT_SID,process.env.AUTH_TOKEN);
+const Restaurant = require('./models/restaurants');
+const Order = require('./models/order');
 
 PORT = 3000;
 
@@ -50,8 +51,15 @@ const users = require('./routes/user.routes');
 app.use('/user', users);
 
 //config for resturant route
-const resturants = require('./routes/resturant.routes');
+const resturants = require('./routes/resturant.route');
 app.use('/resturants', resturants);
+// This Display Template of any resturant
+const acutalresturants = require('./routes/acutalresturants.route');
+app.use('/resturants/',acutalresturants);
+
+// config for checkout Route
+const checkout = require('./routes/checkout.route');
+app.use('/resturants/',checkout );
 
 //config for profile route
 const profile = require('./routes/profile.route');
@@ -65,40 +73,19 @@ app.use('/about', about);
 const contact = require('./routes/contact.route');
 app.use('/contact', contact);
 
-//config for Rest One page
-const restOne = require('./routes/restaurants1.route');
-app.use('/RutgersECEFastFood', restOne);
-
-//config for Rest One Checkout
-const resOneCheckout = require('./routes/resOneCheckout.route');
-app.use('/checkout', resOneCheckout);
-
-//config for Rest Two page
-const restTwo = require('./routes/restaurants2.route');
-app.use('/ChineseCuisine', restTwo);
-
-//config for Rest Two Checkout
-const resTwoCheckout = require('./routes/resTwoCheckout.route');
-app.use('/ChineseCuisine/Checkout', resTwoCheckout);
-
-
-
-//config for Rest Three page
-const restThree = require('./routes/restaurants3.route');
-app.use('/JapaneseCuisine', restThree);
-
-
-
-
-//config for Rest Three page
-const restFour = require('./routes/restaurants4.route');
-app.use('/GermanCuisine', restFour);
-
-
-
 //config for Contact Success Page
 const contactSuccess = require('./routes/contactSuccess.route');
 app.use('/contact/Success', contactSuccess);
+
+
+//config for Vendor Page
+const vendors = require('./routes/vendor.route');
+app.use('/vendor', vendors);
+
+//config for Vendor Publish Page
+const vendorPublish = require('./routes/vendorRestCreate.route');
+app.use('/vendor/createRestaurant', vendorPublish);
+
 
 
 app.get("/logout", function(req, res){
