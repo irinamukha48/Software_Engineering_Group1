@@ -67,4 +67,8 @@ res.redirect("/contact/Success");
 
 })
 
+router.get("/Success",function(req,res){
+  res.render("contactSuccess");
+});
+
 module.exports = router;

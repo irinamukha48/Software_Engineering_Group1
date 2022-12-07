@@ -5,6 +5,8 @@ const passport = require('passport')
 //const { check, validationResult } = require('express-validator/check')
 const resturantController = require('../controllers/resturant.controller')
 
+var items = []
+
 /*
 * route resturants GET route
 */

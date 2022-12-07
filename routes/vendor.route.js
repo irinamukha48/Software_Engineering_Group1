@@ -3,19 +3,22 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 
+var set = require("es6-set");
+
 const User = require('../models/User');
+const vendorController = require("../controllers/vendor.controller");
 
-router.get("/",function(req,res){
-  var userInfo = req.user.email
-  User.findOne({email:userInfo},function(err,foundUser){
-    if(foundUser.vendor === "no"){
-      console.log("For Vendors Only")
-      res.redirect('home')
-    }else{
-      res.render("vendor")
-    }
-  })
+function checkNotAuthenticated(req,res,next){
+  if (!req.isAuthenticated()){
+    return res.redirect('/home');
+  }
+  next();
+}
 
-})
+router.get("/",checkNotAuthenticated,vendorController.renderVendorPage);
+
+router.get("/createRestaurant",checkNotAuthenticated,vendorController.renderRestCreatePage);
+
+router.post("/createRestaurant",checkNotAuthenticated,vendorController.createResturant);
 
 module.exports = router
