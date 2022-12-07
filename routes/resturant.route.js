@@ -10,20 +10,25 @@ var items = []
 
 router.get('/',function(req,res){
   Restaurant.findOne({},function(err,foundrestaurant){
+    var action = "/resturants/"+foundrestaurant.restaurantName
     if(foundrestaurant=== null ){
       if(items.length==0){
         items.push("No Restaurant Free")
-        res.render("restaurant",{newListItems:items});
+        console.log(foundrestaurant.restaurantName)
+        res.render("restaurant",{newListItems:items,actionVal:""});
       }else if(items.length==1 ||foundrestaurant ===null){
-        res.render("restaurant",{newListItems:items});
+        console.log(foundrestaurant.restaurantName)
+        res.render("restaurant",{newListItems:items,actionVal:action});
       }
     }else{
       if(items.length==0){
         items.push(foundrestaurant.restaurantName)
-        res.render("restaurant",{newListItems:items});
+        console.log(foundrestaurant.restaurantName)
+        res.render("restaurant",{newListItems:items,actionVal:action});
       }
       else if(items.length==1 ||foundrestaurant !=null){
-        res.render("restaurant",{newListItems:items});
+        console.log(foundrestaurant.restaurantName)
+        res.render("restaurant",{newListItems:items,actionVal:action});
       }
     }
 

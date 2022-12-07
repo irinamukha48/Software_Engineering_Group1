@@ -53,6 +53,7 @@ app.use('/user', users);
 //config for resturant route
 const resturants = require('./routes/resturant.route');
 app.use('/resturants', resturants);
+
 // This Display Template of any resturant
 const acutalresturants = require('./routes/acutalresturants.route');
 app.use('/resturants/',acutalresturants);
@@ -61,9 +62,11 @@ app.use('/resturants/',acutalresturants);
 const checkout = require('./routes/checkout.route');
 app.use('/resturants/',checkout );
 
+const checkoutsuccess = require('./routes/checkoutsuccess.route');
+app.use('/resturants/',checkoutsuccess );
 //config for profile route
 const profile = require('./routes/profile.route');
-app.use('/profile', profile);
+app.use('/profile',profile);
 
 //config for about route
 const about = require('./routes/about.route');
@@ -104,41 +107,6 @@ app.get("/home",function(req,res){
     }
 });
 
-
-
-
-app.get("/success",function(req,res){
-
-    res.render('success');
-    // This store Users ECE Fast Food to dataBases.
-    /*const order = new Order({
-       classicFires : val0,
-       JuicyBurger  : val1,
-       ChessyPizza  : val2,
-       FriedChicken : val3,
-       LeafySalad   : val4,
-       SoftDrinks   : val5
-    });
-    order.save(function (err) {
-    if (err) return handleError(err);
-    // saved!
-    or Can USE order.save()
-  });*/
-});
-
-app.post("/checkout",function(req,res){
-    var name = req.body.firstname;
-    var address = req.body.address;
-
-  /*client.messages
-    .create({
-       body: 'Thank You'+" "+name+" "+"For choosing ECE GrubHub. Your Order Will be delieved to"+" "+ address+" " +"in 20 to 30 Minutes",
-       from: '+13464886958',
-       to: '+1'
-  });*/
-
-    res.redirect("success");
-});
 
 /**
 * The 404 route page

@@ -9,7 +9,7 @@ const Order = require('../models/order');
 
 router.get("/:customListName",function(req,res){
   const customListName = req.params.customListName
-
+  var bill ;
   Restaurant.findOne({restaurantName:customListName},function(err,foundrestaurant){
   /*  UserInCart = Order({
       restaurantname     : foundrestaurant.restaurantName,
@@ -28,6 +28,15 @@ router.get("/:customListName",function(req,res){
     })
     UserInCart.save()*/
     Order.findOne({restaurantname:customListName},function(err,found){
+      bill = (foundrestaurant.productOnePrice *found.productOnequality)
+      +(foundrestaurant.productTwoPrice * found.productTwoquality )+
+       (foundrestaurant.productThreePrice * found.productThreequality)
+      + (foundrestaurant.productFourPrice * found.productFourquality)+
+        (foundrestaurant.productFivePrice * found.productFivequality)
+      + (foundrestaurant.productSixPrice * found.productSixquality);
+      bill = (Math.round(bill * 100) / 100)
+
+
       res.render("restFour",{restaurantname:foundrestaurant.restaurantName,
       productOne:foundrestaurant.productOneName,
       productOneQuality: found.productOnequality,
@@ -53,8 +62,16 @@ router.get("/:customListName",function(req,res){
       productSixQuality:found.productSixquality,
       productSixImage:foundrestaurant.productSiximageurl,
 
+      productOnePrice  : foundrestaurant.productOnePrice,
+      productTwoPrice  : foundrestaurant.productTwoPrice,
+      productThreePrice: foundrestaurant.productThreePrice,
+      productFourPrice : foundrestaurant.productFourPrice,
+      productFivePrice : foundrestaurant.productFivePrice,
+      productSixPrice  : foundrestaurant.productSixPrice,
+      total:bill,
 
-      actionVal:'/resturants/'+customListName
+      actionVal:'/resturants/'+customListName,
+      checkout:'/resturants/'+customListName+'/checkout'
     })
     })
 
@@ -63,6 +80,7 @@ router.get("/:customListName",function(req,res){
 
 })
 router.post('/:customListName',function(req,res){
+
   const customListName = req.params.customListName
   if(req.body.hasOwnProperty("add")){
     Order.findOne({restaurantname:customListName},function(err,founditems){

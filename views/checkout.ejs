@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="icon" href="images/homepage.ico">
+    <link rel="icon" href="/images/homepage.ico">
     <link rel="stylesheet" href="/css/checkout.css">
     <title>Check Out</title>
   </head>
@@ -14,7 +14,7 @@
       <div class="box1">
         <h1 style="position:relative;left:160px;"> Your Cart</h1>
 
-        <form action= <%= actionVal%> method="get">
+        <form action= <%= action%> method="get">
           <div class="product1">
             <img src= <%= productOne%>  style="position:relative;height:70px;width:100px;">
             <p name="product1" style="position:relative;left:50px;"> <%= prod1 %> </p>
@@ -34,6 +34,7 @@
             <img src=<%= productSix%>  style="position:relative;height:70px;width:100px;position:relative;left:330px;top:-490px;">
             <p name="product5" style="position:relative;left:380px; top:-499px;"> <%= prod6 %> </p>
 
+            <h1 style="position:relative;bottom:500px;width:300px;">Bill: $</h1>
 
           </div>
         </form>
@@ -41,7 +42,7 @@
       </div>
     </div>
 
-     <form action="/checkout" method="POST">
+     <form action= "/resturants/FastFood/checkout/success"  method="post">
     <div class="right">
       <h1 style= "text-align: center; margin: 0 auto 0 auto;width: 590px; font-family:Comic Sans MS; color:#003865;position:relative;top:30px;left:-15px;font-size:75px;"
       >Card Info</h1>
@@ -96,7 +97,7 @@
      <input type="text"  id="cvv" name="cvv"      maxlength="4"                     placeholder="CVC"        required style="position:relative;left:150px;top:10px;width:100px;height:20px;" >
       </div>
 
-        <button type="submit" class="button1"name="Process Order"  style="position:relative;top:120px;left:280px;width:150px;height:50px;font-size:19px;">Order Now</button >
+        <button type="submit" c  style="position:relative;top:120px;left:280px;width:150px;height:50px;font-size:19px;">Order Now</button >
 
 
     </div>

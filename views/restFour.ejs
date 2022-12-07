@@ -27,10 +27,11 @@
             <br><br>
             <li style= "color:white;"> <%=productSix%> &emsp; &emsp;<span > <%=productSixQuality%> <br><br><button type="submit" name="add5" class= "button button1"> ADD</button>&emsp; <button type="submit" name="remove5" class= "button button1"> Remove</button></li>
           </ul>
+          <label for="total" style="color:white;font-size:30px;position:relative;left:20px;"> Total: $<%=total%> </label>
           </form>
 
-          <form  action='/checkout' method="get">
-            <button type="submit" class= "button button1" style="position:relative;top:5px;left:60px;width:150px;height:50px;font-size:15px;font-weight: bold;">CHECK OUT</button>
+          <form  action= <%= checkout %>  method="get">
+            <button type="submit"  style="position:relative;top:30px;left:50px;width:150px;height:50px;font-size:17px;font-weight: bold;">CHECK OUT</button>
           </form>
 
 
@@ -46,36 +47,48 @@
         <div style="width: 300px;height:200px;position: relative;top:60px;left: 20px;background-image: url(<%= productOneImage%>);background-repeat: no-repeat;background-size: 80%;">
           <div class="fries">
           <h1 style="position:relative;bottom:70px;left:40px;" > <%=productOne%> </h1>
+          <label for="price1" style="font-size:22px;position:relative;top:160px;left:40px;">Price:</label>
+          <label for="price1" style="font-size:22px;position:relative;top:160px;left:60px;"> $<%=productOnePrice%> </label>
           </div>
         </div>
 
         <div style="width: 300px;height:210px;position: relative;bottom:180px;left: 450px;background-image: url(<%= productTwoImage%>);background-repeat: no-repeat;background-size: 70%;">
           <div class="burger">
             <h1 style="position:relative;bottom:50px;left:40px;" > <%=productTwo%> </h1>
+            <label for="price2" style="font-size:22px;position:relative;top:180px;">Price:</label>
+            <label for="price2" style="font-size:22px;position:relative;top:180px;left:20px"> $<%=productTwoPrice%> </label>
           </div>
         </div>
 
         <div style="width: 300px;height:200px;position: relative;bottom:400px;left: 820px;background-image: url(<%= productThreeImage%>);background-repeat: no-repeat;background-size: 70%;">
           <div class="Pizza">
           <h1 style="position:relative;bottom:60px;left:30px;"> <%=productThree%> </h1>
+          <label for="price3" style="font-size:22px;position:relative;top:170px;">Price:</label>
+          <label for="price3" style="font-size:22px;position:relative;top:170px;left:20px"> $<%=productThreePrice%> </label>
           </div>
         </div>
 
         <div style="width: 300px;height:200px;position: relative;bottom:260px;left: 50px;background-image: url(<%= productFourImage%>);background-repeat: no-repeat;background-size: 90%;">
           <div class="fried">
           <h1 style="position:relative;bottom:70px;"> <%=productFour%> </h1>
+          <label for="price4" style="font-size:22px;position:relative;top:150px;">Price:</label>
+          <label for="price4" style="font-size:22px;position:relative;top:150px;left:20px"> $<%=productFourPrice%> </label>
           </div>
         </div>
 
         <div style="width: 330px;height:200px;position: relative;bottom:480px;left: 420px;background-image: url(<%= productFiveImage%>);background-repeat: no-repeat;background-size: 90%;">
           <div class="salad">
             <h1 style="position:relative;bottom:70px;left:30px; width:280px;"> <%=productFive%> </h1>
+            <label for="price4" style="font-size:22px;position:relative;top:150px;">Price:</label>
+            <label for="price5" style="font-size:22px;position:relative;top:150px;left:20px"> $<%=productFivePrice%> </label>
           </div>
         </div>
 
         <div style="width: 300px;height:200px;position: relative;bottom:710px;left: 830px;background-image: url(<%= productSixImage%>);background-repeat: no-repeat;background-size: 80%;">
           <div class="softdrinks">
             <h1 style="position:relative;bottom:70px;left:40px; width:250px;"> <%=productSix%> </h1>
+            <label for="price6" style="font-size:22px;position:relative;top:150px;">Price:</label>
+            <label for="price6" style="font-size:22px;position:relative;top:150px;left:20px"> $<%=productSixPrice%> </label>
           </div>
         </div>
 
