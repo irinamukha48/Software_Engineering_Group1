@@ -2,19 +2,21 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 var orderSchema = new mongoose.Schema({
-  restaurantname    : String,
-  productOnename    : String,
-  productOnequality : Number,
-  productTwoname    : String,
-  productTwoquality : Number,
+  restaurantname      : String,
+  username            : String,
+  productOnename      : String,
+  productOnequantity  : Number,
+  productTwoname      : String,
+  productTwoquantity  : Number,
   productThreename    : String,
-  productThreequality : Number,
-  productFourname    : String,
-  productFourquality : Number,
-  productFivename    : String,
-  productFivequality : Number,
-  productSixname    : String,
-  productSixquality : Number,
+  productThreequantity: Number,
+  productFourname     : String,
+  productFourquantity : Number,
+  productFivename     : String,
+  productFivequantity : Number,
+  productSixname      : String,
+  productSixquantity  : Number,
+  bill                : Number
 
 });
 

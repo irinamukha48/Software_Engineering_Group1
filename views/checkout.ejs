@@ -34,7 +34,7 @@
             <img src=<%= productSix%>  style="position:relative;height:70px;width:100px;position:relative;left:330px;top:-490px;">
             <p name="product5" style="position:relative;left:380px; top:-499px;"> <%= prod6 %> </p>
 
-            <h1 style="position:relative;bottom:500px;width:300px;">Bill: $</h1>
+            <h1 style="position:relative;bottom:500px;width:300px;">Bill: $<%= total %> </h1>
 
           </div>
         </form>
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-     <form action= "/resturants/FastFood/checkout/success"  method="post">
+     <form action= <%= checkout%>  method="post">
     <div class="right">
       <h1 style= "text-align: center; margin: 0 auto 0 auto;width: 590px; font-family:Comic Sans MS; color:#003865;position:relative;top:30px;left:-15px;font-size:75px;"
       >Card Info</h1>
@@ -61,8 +61,8 @@
         <label style="position:relative;left:10px;top:10px;">Email:</label>
         <label style="position:relative;left:250px;top:10px;">Address:</label>
         <br>
-        <input type="text" id="emailaddress" name="emailaddress" maxlength="22" placeholder="Email"               required        style="position:relative;left:10px;top:10px;width:150px;height:20px;" >
-        <input type="text" id="address"      name="address"      maxlength="32"      placeholder="Delivery Address"    required        style="position:relative;left:130px;top:10px;width:150px;height:20px;" >
+        <input type="text" id="emailaddress" name="emailaddress" maxlength="50" placeholder="Email"               required        style="position:relative;left:10px;top:10px;width:150px;height:20px;" >
+        <input type="text" id="address"      name="address"      maxlength="50"      placeholder="Delivery Address"    required        style="position:relative;left:130px;top:10px;width:150px;height:20px;" >
 
         <div>
           <h1 style="position:relative;left:10px;top:10px;"> Payment</h1>
