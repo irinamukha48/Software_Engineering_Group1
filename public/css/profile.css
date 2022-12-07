@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(23, 59, 92);
+}
+
+/* Navbar container */
+.navbar {
+    position:sticky;
+    width: 100%;
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+
+/* Links inside the navbar*/
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover{
+    background-color: #256D85;
+}
+
+.Display{
+    padding-left: 30%;
+    padding-right: 30%;
+    margin: auto;
+    text-align: center;
+}
+
+.Display>div{
+    background-color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius:5px;
+    box-shadow: inset 0px 1px 0px #8f9192, 0px 5px 0px 0px #b5b9b9, 0px 10px 5px rgb(238, 230, 230);
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.prof-img{
+    background-color: transparent;
+    margin-top: 1%;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+.edit{
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+input[type="submit"] {
+    width:240px;
+    height:35px;
+    display:block;
+    font-family:Arial, "Helvetica", sans-serif;
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+    text-decoration:none;
+    text-transform:uppercase;
+    text-align:center;
+    text-shadow:1px 1px 0px #37a69b;
+    padding-top:6px;
+    margin: 29px 0 0 29px;
+    position:relative;
+    cursor:pointer;
+    border: none;
+    background-color: #37a69b;
+    background-image: linear-gradient(top,#3db0a6,#3111);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius:5px;
+    box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #497a78, 0px 10px 5px #999;
+  }
+  

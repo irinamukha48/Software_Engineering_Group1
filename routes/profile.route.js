@@ -15,7 +15,7 @@ const Order = require('../models/order');
 router.get('/',function(req,res){
 
   if(req.isAuthenticated()){
-    res.render("profile",{name:req.user.email});
+    res.render("profile",{user:req.user});
   }else{
     console.log("Not a Authenticated User")
     res.redirect('/user/login')

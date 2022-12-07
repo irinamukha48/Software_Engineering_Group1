@@ -7,17 +7,68 @@
     <title>Profile</title>
   </head>
   <body>
-    <form action="/profile" method="get">
-      <h1>Hello <%= name%></h1> 
-    </form>
 
-    <form action="/logout" method="delete">
-      <button type="submit">Log Out!</button>
-    </form>
+
+      <div class="navbar">
+      <a href="/home">Home</a>
+      <a href="/profile">Profile</a>
+      <a href="/orders">Orders</a>
+      </div>
+
+
+    <div class="prof-img">
+        <img src="/images/profile.jpg" alt="">
+    </div>
+    
+    <div class="Display">
+
+      <div class= "name">
+      <h2>Name : <%=user.name%></h2>
+      </div>
+
+      <div class= "userName">
+      <h2>Username : <%=user.username%></h2>
+      </div>
+
+      <div class= "email">
+      <h2>Email : <%=user.email%></h2>
+      </div>
+
+      <div class= "address">
+      <h2>Address : <%=user.deliveryAddress%></h2>
+      </div>
+
+    </div>
+
+    <div class = "edit">
+      <form action="/profile/edit" method="get">
+        <input type="submit" value = "Edit Profile"></input>
+      </form>
+    </div>
+    
+    <div class = "logout">
+        <form action="/logout" method="delete">
+          <input type="submit" value = "Log Out"></input>
+        </form>
+    </div>
+
+
+    <!--
+    <div class="middle"> 
+      <div class = "name">
+        <form action="/profile" method="get">
+          <h1>Hello</h1> 
+        </form>
+      </div>
+  
+      <div class = "logout">
+        <form action="/logout" method="delete">
+          <button type="submit">Log Out!</button>
+        </form>
+      </div>
+    </div>
     
 
-   
-   
-    
+    -->
   </body>
 </html>

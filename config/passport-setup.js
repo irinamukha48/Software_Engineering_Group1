@@ -93,8 +93,12 @@ passport.use('login', new localStrategy({
             //newUser.first_name = req.body.firstname
             //newUser.last_name = req.body.lastname
             //newUser.phone = req.body.phone
-            wrongUser.email = req.body.email;
-            wrongUser.password = wrongUser.generateEncryptedPassword(req.body.password);
+            wrongUser.email    = req.body.email
+            wrongUser.password = wrongUser.generateEncryptedPassword(req.body.password)
+            wrongUser.deliveryAddress  = req.body.address
+            wrongUser.username = req.body.username
+            wrongUser.vendor   = req.body.vendor
+            wrongUser.name     = req.body.name
             //newUser.avatar = "profile.png"
             //newUser.role = req.body.role
             wrongUser.created_at = Date.now();
