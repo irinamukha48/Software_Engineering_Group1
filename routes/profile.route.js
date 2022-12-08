@@ -24,4 +24,6 @@ router.get('/edit',checkNotAuthenticated,userController.render_edit_profile);
 
 router.post('/edit',checkNotAuthenticated,userController.edit_profile)
 
+router.get('/orders',checkNotAuthenticated,userController.render_past_orders);
+
 module.exports = router;
