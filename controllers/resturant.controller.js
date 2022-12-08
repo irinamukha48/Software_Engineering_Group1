@@ -15,7 +15,6 @@ exports.all_resturant = function(req,res) {
   Restaurant.find({},function(err,foundrestaurant){
     //var action = "/resturants/"+foundrestaurant
     res.render("restaurant",{newListItems:foundrestaurant})
-
   })
 
 }
@@ -430,8 +429,9 @@ exports.render_success = function (req,res) {
     var customResturants = req.params.customResturants
     var name =  req.user.name
 
-    UserOrder.findOne({email:req.user.email},function(err,result){
-        res.render("success",{Subject:"Hi,"+" "+name+" "+"your Order Number is:"+" "+result.ordernumber,
-        message:"As Always Thank you for choosing ECE GRUBHUB" })
+    UserOrder.findOne({username:name},function(err,result){
+      console.log(result)
+      res.render("success",{Subject:"Hi,"+" "+name+" "+"your Order Number is:"+" "+result.ordernumber,
+      message:"As Always Thank you for choosing ECE GRUBHUB" })
     })
 }
