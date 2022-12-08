@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="images/homepage.ico">
+    <link rel="stylesheet" href="/css/editProfile.css">
+    <title>Profile</title>
+  </head>
+  <body>
+
+
+      <div class="navbar">
+      <a href="/home">Home</a>
+      <a href="/profile">Profile</a>
+      <a href="/orders">Orders</a>
+      </div>
+
+
+    <div class="prof-img">
+        <img src="/images/profile.jpg" alt="">
+    </div>
+
+    <div class="error">
+      <% if(messages.error) { %>
+      <%= messages.error %>
+          <% } %>
+    </div>
+
+    <div class="Display">
+      <form action="/profile/edit" method="POST">
+        <div class= "name">
+            <label for="name">Name</label>
+            <input type="text" placeholder="<%=user.name%>" id="name" name="name">
+        </div>
+
+        <div class= "userName">
+            <label for="username">Username</label>
+            <input type="text" placeholder="<%=user.username%>" id="username" name="username">
+        </div>
+
+        <div class= "email">
+            <label for="email">Email</label>
+            <input type="text" placeholder="<%=user.email%>" id="email" name="email">
+        </div>
+
+        <div class= "address">
+            <label for="address">Address</label>
+            <input type="text" placeholder="<%=user.deliveryAddress%>" id="deliveryAddress" name="deliveryAddress">
+        </div>
+
+        <div class= "password">
+            <label for="password">Password</label>
+            <input type="text" placeholder="password" id="password" name="password">
+        </div>
+
+        <div class= "confirmPassword">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="text" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword">
+        </div>
+
+        <span>
+          <input type="submit" value = "Submit"></input>
+        </span>
+
+      </form>
+    </div>
+
+    <div class="buttons"> 
+      <form action="/profile" method="get">
+        <input type="submit" value = "Cancel"></input>
+      </form>
+    </div>
+    
+    
+  </body>
+</html>
