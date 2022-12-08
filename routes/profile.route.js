@@ -24,6 +24,14 @@ router.get('/edit',checkNotAuthenticated,userController.render_edit_profile);
 
 router.post('/edit',checkNotAuthenticated,userController.edit_profile)
 
+router.get('/edit/success',checkNotAuthenticated,function(req,res){
+              res.render("profileSuccess",{
+              errors: req.flash('errors'),
+              error: req.flash('error'),
+              Subject: "Profile Updated Successfully",
+              message: "redirecting ..."});
+})
+
 router.get('/orders',checkNotAuthenticated,userController.render_past_order);
 
 module.exports = router;

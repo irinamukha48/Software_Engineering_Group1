@@ -52,13 +52,12 @@ exports.edit_profile = function (req,res){
     
     var correctPassword = req.user.password;
 
-    if(!password === confirmPassword)
+    if(password != confirmPassword)
     {
-        res.redirect('/profile/edit',{messages : "Passwords Dont Match"});
+        res.render('editProfile',{user:req.user, errors : "Passwords Dont Match"});
     }
     else
     {
-        
         correctPassword = password;
 
         User.findOne({email:req.user.email}, (err, foundUser) =>{
@@ -75,7 +74,7 @@ exports.edit_profile = function (req,res){
                 req.session.passport.user.deliveryAddress = deliveryAddress;
                 req.session.passport.user.password = correctPassword;
 
-                res.redirect("/profile");
+                res.redirect('/profile/edit/success');
             }
         })
     }
