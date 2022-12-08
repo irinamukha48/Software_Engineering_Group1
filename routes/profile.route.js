@@ -9,23 +9,19 @@ router.use(bodyParser.urlencoded({ extended: true }));
 
 const User = require('../models/User');
 const Order = require('../models/order');
+const userController = require('../controllers/user.controller');
 
-
-
-router.get('/',function(req,res){
-
-  if(req.isAuthenticated()){
-    res.render("profile",{user:req.user});
-  }else{
-    console.log("Not a Authenticated User")
-    res.redirect('/user/login')
+function checkNotAuthenticated(req,res,next){
+  if (!req.isAuthenticated()){
+    return res.redirect('/home');
   }
+  next();
+}
 
+router.get('/',checkNotAuthenticated,userController.user_profile);
 
-});
+router.get('/edit',checkNotAuthenticated,userController.render_edit_profile);
 
-router.post("/",function(req,res){
-  res.redirect("profile");
-});
+router.post('/edit',checkNotAuthenticated,userController.edit_profile)
 
 module.exports = router;

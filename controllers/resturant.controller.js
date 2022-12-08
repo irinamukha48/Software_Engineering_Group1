@@ -12,28 +12,9 @@ var creditcardutils = require('creditcardutils');// Libary
 
 exports.all_resturant = function(req,res) {
 
-    Restaurant.findOne({},function(err,foundrestaurant){
-    var action = "/resturants/"+foundrestaurant.restaurantName
-    if(foundrestaurant=== null ){
-      if(items.length==0){
-        items.push("No Restaurant Free")
-        //console.log(foundrestaurant.restaurantName)
-        res.render("restaurant",{newListItems:items,actionVal:""});
-      }else if(items.length==1 ||foundrestaurant ===null){
-        console.log(foundrestaurant.restaurantName)
-        res.render("restaurant",{newListItems:items,actionVal:action});
-      }
-    }else{
-      if(items.length==0){
-        items.push(foundrestaurant.restaurantName)
-        //console.log(foundrestaurant.restaurantName)
-        res.render("restaurant",{newListItems:items,actionVal:action});
-      }
-      else if(items.length==1 ||foundrestaurant !=null){
-        //console.log(foundrestaurant.restaurantName)
-        res.render("restaurant",{newListItems:items,actionVal:action});
-      }
-    }
+  Restaurant.find({},function(err,foundrestaurant){
+    //var action = "/resturants/"+foundrestaurant
+    res.render("restaurant",{newListItems:foundrestaurant})
 
   })
 
