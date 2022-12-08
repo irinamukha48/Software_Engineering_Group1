@@ -431,7 +431,7 @@ exports.render_success = function (req,res) {
 
     UserOrder.findOne({username:name},function(err,result){
       console.log(result)
-        res.render("success",{Subject:"Hi,"+" "+name+" "+"your Order Number is:"+" "+result.ordernumber,
-        message:"As Always Thank you for choosing ECE GRUBHUB" })
+      res.render("success",{Subject:"Hi,"+" "+name+" "+"your Order Number is:"+" "+result.ordernumber,
+      message:"As Always Thank you for choosing ECE GRUBHUB" })
     })
 }

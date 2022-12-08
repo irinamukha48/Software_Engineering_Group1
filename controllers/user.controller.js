@@ -79,11 +79,10 @@ exports.edit_profile = function (req,res){
             }
         })
     }
-
-
-    
-    
-
-    
+ 
 }
 
+
+exports.render_past_order = function (req,res){
+    res.redirect("/home");
+}
