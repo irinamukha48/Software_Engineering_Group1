@@ -58,11 +58,8 @@ exports.edit_profile = function (req,res){
     }
     else
     {
-        console.log("here");
         
         correctPassword = password;
-
-        console.log(password)
 
         User.findOne({email:req.user.email}, (err, foundUser) =>{
             if(err)
