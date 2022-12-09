@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(23, 59, 92);
+}
+
+/* Navbar container */
+.navbar {
+    position:sticky;
+    width: 100%;
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+
+/* Links inside the navbar*/
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover{
+    background-color: #256D85;
+}
+
+.heading{
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.heading>div{
+    margin-top: 2%;
+    background-color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius:5px;
+    margin: auto;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.Display>div{
+    background-color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius:5px;
+    box-shadow: inset 0px 1px 0px #8f9192, 0px 5px 0px 0px #b5b9b9, 0px 10px 5px rgb(238, 230, 230);
+    margin-top: 0.5%;
+    margin-bottom: 3%;
+}
+
+.rest-name{
+    display: inline-flex;
+    margin-left: 1%;
+}
+
+.rest-name>div{
+    text-align: center;
+    margin-right: 25px;
+}
+
+hr{
+    border: none;
+    border-top: 2px dashed black;
+}
+
+.product{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.product>div{
+    display: grid;
+    grid-template-areas: "one two";
+}
+
+.items{
+    grid-area: "one";
+    text-align: left;
+}
+
+.quantity{
+    grid-area: "two";
+    text-align: right;
+}
+
+.item-name{
+    grid-area: "one";
+    text-align: left;
+}
+
+.item-quantity{
+    grid-area: "two";
+    text-align: right;
+}
+
+.Total{
+    display: grid;
+    grid-template-areas: "one two";
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.tot{
+    grid-area: "two";
+    text-align: left;
+}
+
+.bill{
+    grid-area: "two";
+    text-align: right;
+}

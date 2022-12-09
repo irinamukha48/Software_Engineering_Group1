@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="images/homepage.ico">
+    <link rel="stylesheet" href="/css/pastOrders.css">
+    <title>Profile</title>
+  </head>
+  <body>
+
+
+      <div class="navbar">
+      <a href="/home">Home</a>
+      <a href="/profile">Profile</a>
+      <a href="/profile/orders">Orders</a>
+      </div>
+
+    <div class="heading">
+    <div>
+        <h1> Past Orders</h1>
+    </div>
+    </div>
+    
+    <%if (pastOrders.length != 0) {%>
+    <div class="Display">
+        <% for (let i=0;i<pastOrders.length; i++){ %>
+            <div class="orders">
+                <div class="rest-name">
+                    <div><h3>Resturant : </h3></div><div> <h4><%=pastOrders[i].restaurantname%></h4></div>
+                </div>
+                <hr>
+
+                <div class = product>
+                    <div>
+                    <div class="items">
+                        <h4>Item(s)</h4>
+                    </div>
+                    <div class="quantity">
+                        <h4>Quantity</h4>
+                    </div>
+                    </div>
+                    <% for (let j=0;j<items[i].Product.length; j++){ %>
+                        <div>
+                        <div class ="item-name">
+                            <h4><%= items[i].Product[j]%></h4>
+                        </div>
+                        <div class = "item-quantity">
+                            <h4><%= items[i].Quantity[j]%></h4>
+                        </div>
+                        </div>
+                    <%}%>
+                </div>
+
+                <hr>
+
+                <div class ="Total">
+                    <div class="tot">
+                        <h3>Total Amount<h3>
+                    </div>
+                    <div class = "bill">
+                        <h4>$<%=pastOrders[i].bill%><h4>
+                    </div>
+                </div>
+
+            </div>
+        <%}%>
+    </div>
+    <%}%>
+    
+  </body>
+</html>
