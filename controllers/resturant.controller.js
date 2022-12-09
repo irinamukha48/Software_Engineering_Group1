@@ -1,6 +1,6 @@
 const Restaurant = require('../models/restaurants');
 const Order = require('../models/order');
-const UserOrder = require('../models/userorder');
+const UserOrder = require('../models/UserOrder');
 
 const nodemailer = require('nodemailer');
 const { check, validationResult } = require('express-validator');
@@ -350,7 +350,7 @@ exports.link_order_and_user = function(req,res) {
         var month           =  req.body.month;
         var year            =  req.body.year;
         var cvv             =  req.body.cvv;
-        var restaurentName  = found.restaurantname;
+        var restaurentName  =  found.restaurantname;
         var price = found.bill;
 
 

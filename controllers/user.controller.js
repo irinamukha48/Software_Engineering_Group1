@@ -3,7 +3,9 @@ const { check, validationResult } = require('express-validator');
 const { ConnectionPolicyPage } = require('twilio/lib/rest/voice/v1/connectionPolicy');
 const e = require('connect-flash');
 
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+
+const UserOrder = require('../models/UserOrder');
 
 generateEncryptedPassword = function(password){
     return bcrypt.hashSync(password,bcrypt.genSaltSync(10),null);
@@ -83,5 +85,76 @@ exports.edit_profile = function (req,res){
 
 
 exports.render_past_order = function (req,res){
-    res.redirect("/home");
+    UserOrder.find({email:req.user.email} , function (err,foundOrders){
+
+        let orders = foundOrders;
+
+        const orderItems = [];
+
+        if(err)
+        {
+            req.flash(err);
+        }
+
+        if(foundOrders)
+        {   
+
+            for(i = 0; i<orders.length; i++)
+            {
+                orderItems[i] = {"Product" : [], "Quantity" : []};
+                var l =0;
+
+                for (var j in orders[i])
+                {
+                    if(j.includes("product"))
+                    {  
+                        if(j.includes("name"))
+                        {
+                            var quantity;
+                            var done = false
+                            
+                            for (k in orders[i]){
+
+                                if(done)
+                                {
+                                quantity = orders[i][k];
+                                break;  
+                                }
+
+                                if(k == j)
+                                {
+                                    done = true;
+                                }
+                                
+                            }
+
+                            if(quantity != 0)
+                            {
+                                orderItems[i].Product[l] = orders[i][j];
+                                console.log("name : " + orders[i][j]);
+                            } 
+                            
+                        }
+                        else if (j.includes("quantity"))
+                        {
+                            if(orders[i][j] != 0)
+                            {
+                                orderItems[i].Quantity[l] = orders[i][j];
+                                console.log("quant : " + orders[i][j]);
+                                l++;
+                            }   
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+        }
+
+        res.render("pastOrders",{pastOrders:orders,items:orderItems})
+
+
+
+    });
 }
