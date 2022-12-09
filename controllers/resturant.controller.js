@@ -118,10 +118,9 @@ exports.render_resturant = function(req,res) {
             + (foundrestaurant.productSixPrice * found.productSixquantity);
             bill = (Math.round(bill * 100) / 100)
     
-            Order.updateOne({email:req.user.email, restaurantname:customListName},{bill:bill},function(err,res){
-            })
+            Order.updateOne({email:req.user.email, restaurantname:customListName},{bill:bill},function(err,res){})
             
-                res.render("restFour",{restaurantname:foundrestaurant.restaurantName,
+            res.render("restFour",{restaurantname:foundrestaurant.restaurantName,
             productOne:foundrestaurant.productOneName,
             productOneQuantity: found.productOnequantity,
             productOneImage:foundrestaurant.productOneimageurl,
@@ -152,11 +151,12 @@ exports.render_resturant = function(req,res) {
             productFourPrice : foundrestaurant.productFourPrice,
             productFivePrice : foundrestaurant.productFivePrice,
             productSixPrice  : foundrestaurant.productSixPrice,
-            total:found.bill,
+            total:bill,
     
             actionVal:'/resturants/'+encodeURIComponent(customListName),
             checkout:'/resturants/'+encodeURIComponent(customListName)+'/checkout'
             })
+            
             })
             })
         }

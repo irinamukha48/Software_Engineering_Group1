@@ -30,9 +30,11 @@
           <label for="total" style="color:white;font-size:30px;position:relative;left:20px;"> Total: $<%=total%> </label>
           </form>
 
+          <% if (total!=0) {%>
           <form  action= <%= checkout %>  method="get">
             <button type="submit"  style="position:relative;top:30px;left:50px;width:150px;height:50px;font-size:17px;font-weight: bold;">CHECK OUT</button>
           </form>
+          <%}%>
 
 
       </div>

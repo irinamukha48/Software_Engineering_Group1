@@ -83,6 +83,6 @@ exports.createResturant = function (req,res) {
 
   CreateRestaurant.save();
   console.log("restaurant have successfully created")
-  res.render("success",{Subject:"Your"+" "+restaurantName+" "+"have been successfully upload to ECE GRUBHUB.",
+  res.render("vendorSuccess",{Subject:"Your"+" "+restaurantName+" "+"have been successfully upload to ECE GRUBHUB.",
                           message:"As Always Thank you choosing Rutgers ECE "});
 }
