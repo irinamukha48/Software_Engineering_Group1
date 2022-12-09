@@ -134,7 +134,6 @@ exports.render_past_order = function (req,res){
                             if(quantity != 0)
                             {
                                 orderItems[i].Product[l] = orders[i][j];
-                                console.log("name : " + orders[i][j]);
                             } 
                             
                         }
@@ -143,7 +142,6 @@ exports.render_past_order = function (req,res){
                             if(orders[i][j] != 0)
                             {
                                 orderItems[i].Quantity[l] = orders[i][j];
-                                console.log("quant : " + orders[i][j]);
                                 l++;
                             }   
                         }

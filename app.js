@@ -54,6 +54,9 @@ app.use('/user', users);
 const resturants = require('./routes/resturant.route');
 app.use('/resturants', resturants);
 
+const review = require('./routes/review.routes');
+app.use('/review', review);
+
 /*
 // This Display Template of any resturant
 const acutalresturants = require('./routes/acutalresturants.route');
