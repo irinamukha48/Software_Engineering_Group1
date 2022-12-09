@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 var userorderSchema = new mongoose.Schema({
   restaurantname      : String,
   email               : String,
+  orderemail          : String,
   ordernumber         : String,
   username            : String,
   deliveryaddress     : String,
@@ -24,5 +25,5 @@ var userorderSchema = new mongoose.Schema({
 });
 
 
-const UserOrder = new mongoose.model("UserOrder",userorderSchema);
+const UserOrder = new mongoose.model("UserOrder",userorderSchema,"invoices");
 module.exports = UserOrder;

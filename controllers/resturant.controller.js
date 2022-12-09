@@ -25,64 +25,65 @@ exports.render_resturant = function(req,res) {
     var bill;
     var name = req.user.name
     Restaurant.findOne({restaurantName:customListName},function(err,foundrestaurant){
-    Order.findOne({username:name},function(err,found){
-        if(found === null){
-        UserInCart = Order({
-        restaurantname      : foundrestaurant.restaurantName,
-        username            : req.user.name,
-        productOnename      : foundrestaurant.productOneName,
-        productOnequantity  : 0,
-        productTwoname      : foundrestaurant.productTwoName,
-        productTwoquantity  : 0,
-        productThreename    : foundrestaurant.productThreeName,
-        productThreequantity: 0,
-        productFourname     : foundrestaurant.productFourName,
-        productFourquantity : 0,
-        productFivename     : foundrestaurant.productFiveName,
-        productFivequantity : 0,
-        productSixname      : foundrestaurant.productSixName,
-        productSixquantity  : 0,
-        bill                : 0
-        })
-        UserInCart.save();
-        Restaurant.findOne({restaurantName:customListName},function(err,foundrestaurant){
-        res.render("restFour",{restaurantname:foundrestaurant.restaurantName,
-            productOne:foundrestaurant.productOneName,
-            productOneQuantity: 0,
-            productOneImage:foundrestaurant.productOneimageurl,
+    Order.findOne({email:req.user.email},function(err,found){
+    if(found === null){
+      UserInCart = Order({
+      restaurantname      : foundrestaurant.restaurantName,
+      email               : req.user.email,
+      username            : req.user.name,
+      productOnename      : foundrestaurant.productOneName,
+      productOnequantity  : 0,
+      productTwoname      : foundrestaurant.productTwoName,
+      productTwoquantity  : 0,
+      productThreename    : foundrestaurant.productThreeName,
+      productThreequantity: 0,
+      productFourname     : foundrestaurant.productFourName,
+      productFourquantity : 0,
+      productFivename     : foundrestaurant.productFiveName,
+      productFivequantity : 0,
+      productSixname      : foundrestaurant.productSixName,
+      productSixquantity  : 0,
+      bill                : 0
+      })
+      UserInCart.save();
+      Restaurant.findOne({restaurantName:customListName},function(err,foundrestaurant){
+      res.render("restFour",{restaurantname:foundrestaurant.restaurantName,
+          productOne:foundrestaurant.productOneName,
+          productOneQuantity: 0,
+          productOneImage:foundrestaurant.productOneimageurl,
 
-            productTwo:foundrestaurant.productTwoName,
-            productTwoQuantity:0,
-            productTwoImage:foundrestaurant.productTwoimageurl,
+          productTwo:foundrestaurant.productTwoName,
+          productTwoQuantity:0,
+          productTwoImage:foundrestaurant.productTwoimageurl,
 
-            productThree:foundrestaurant.productThreeName,
-            productThreeQuantity:0,
-            productThreeImage: foundrestaurant.productThreeimageurl,
+          productThree:foundrestaurant.productThreeName,
+          productThreeQuantity:0,
+          productThreeImage: foundrestaurant.productThreeimageurl,
 
-            productFour:foundrestaurant.productFourName,
-            productFourQuantity:0,
-            productFourImage:foundrestaurant.productFourimageurl,
+          productFour:foundrestaurant.productFourName,
+          productFourQuantity:0,
+          productFourImage:foundrestaurant.productFourimageurl,
 
-            productFive:foundrestaurant.productFiveName,
-            productFiveQuantity:0,
-            productFiveImage:foundrestaurant.productFiveimageurl,
+          productFive:foundrestaurant.productFiveName,
+          productFiveQuantity:0,
+          productFiveImage:foundrestaurant.productFiveimageurl,
 
-            productSix:foundrestaurant.productSixName,
-            productSixQuantity:0,
-            productSixImage:foundrestaurant.productSiximageurl,
+          productSix:foundrestaurant.productSixName,
+          productSixQuantity:0,
+          productSixImage:foundrestaurant.productSiximageurl,
 
-            productOnePrice  : foundrestaurant.productOnePrice,
-            productTwoPrice  : foundrestaurant.productTwoPrice,
-            productThreePrice: foundrestaurant.productThreePrice,
-            productFourPrice : foundrestaurant.productFourPrice,
-            productFivePrice : foundrestaurant.productFivePrice,
-            productSixPrice  : foundrestaurant.productSixPrice,
-            total:0,
+          productOnePrice  : foundrestaurant.productOnePrice,
+          productTwoPrice  : foundrestaurant.productTwoPrice,
+          productThreePrice: foundrestaurant.productThreePrice,
+          productFourPrice : foundrestaurant.productFourPrice,
+          productFivePrice : foundrestaurant.productFivePrice,
+          productSixPrice  : foundrestaurant.productSixPrice,
+          total:0,
 
-            actionVal:'/resturants/'+customListName,
-            checkout:'/resturants/'+customListName+'/checkout'
-            })
-        })
+          actionVal:'/resturants/'+customListName,
+          checkout:'/resturants/'+customListName+'/checkout'
+          })
+      })
     }else{
         Restaurant.findOne({restaurantName:customListName},function(err,foundrestaurant){
         Order.findOne({username:name},function(err,found){
@@ -340,10 +341,15 @@ exports.link_order_and_user = function(req,res) {
     var name = req.user.name
     var ordernumber = Math.floor(Math.random()*10000)+1000;
 
-    Order.findOne({username:name},function(err,found){
+    console.log(req.params.customResturants);
+    console.log(name);
+    console.log(req.user.email);
+    Order.findOne({email:req.user.email, restaurantname:customResturants},function(err,found){
+        console.log(found)
         var FirstName       =  req.body.firstname;
         var LastName        =  req.body.lastname;
-        var Email           =  req.body.emailaddress;
+        var email           =  req.user.email;
+        var orderEmail      =  req.body.emailaddress;
         var address         =  req.body.address;
         var NameOnCard      =  req.body.NameOnCard;
         var CardNumber      =  req.body.cardNumber;
@@ -386,13 +392,14 @@ exports.link_order_and_user = function(req,res) {
         });
         let mailDetails = {
             from: process.env.USER_NAME,
-            to: Email,
+            to: orderEmail,
             subject: 'ECE GRUBHUB',
             text: 'Hi,'+" "+name+" "+'Thank you for choosing'+" "+found.restaurantname+" "+"resturant. We are currently preparing your food and the estimated time to up is xyz.Your"+" "+"Order Number is"+" "+"ECE"+ordernumber+"."+" "+"Thank You for choosing ECE GRUBHUB."
         };
         var CreateOrder = UserOrder({
             restaurantname      : restaurentName,
-            email               : Email,
+            email               : email,
+            orderemail          : orderEmail,
             ordernumber         : "ECE"+ordernumber,
             username            : FirstName+" "+LastName,
             deliveryaddress     : address,
@@ -429,7 +436,7 @@ exports.render_success = function (req,res) {
     var customResturants = req.params.customResturants
     var name =  req.user.name
 
-    UserOrder.findOne({username:name},function(err,result){
+    UserOrder.findOne({email:req.user.email},function(err,result){
       console.log(result)
       res.render("success",{Subject:"Hi,"+" "+name+" "+"your Order Number is:"+" "+result.ordernumber,
       message:"As Always Thank you for choosing ECE GRUBHUB" })
