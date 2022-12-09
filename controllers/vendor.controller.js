@@ -2,27 +2,32 @@ const User = require('../models/User');
 const Restaurant = require('../models/restaurants');
 
 exports.renderVendorPage = function (req,res) {
-    var userInfo = req.user.email
-    User.findOne({email:userInfo},function(err,foundUser){
-    if(foundUser.vendor === "no"){
-      console.log("For Vendors Only")
-      res.redirect('home')
-    }else{
-      res.render("vendor")
-    }
-  })
+  var userInfo = req.user.email
+  var name     = req.user.name
+  User.findOne({email:userInfo},function(err,foundUser){
+  if(foundUser.vendor === "no"){
+    console.log("For Vendors Only")
+    res.redirect('home')
+  }else{
+    Restaurant.find({},function(err,foundrestaurant){
+      res.render("vendor",{newListItems:foundrestaurant,name:name})
+    })
+    
+  }
+})
 }
 
 exports.renderRestCreatePage = function (req,res) {
-    var userInfo = req.user.email
-    User.findOne({email:userInfo},function(err,foundUser){
-    if(foundUser.vendor === "no"){
-      res.redirect("home")
-    }else{
-      res.render("vendorResCreate")
-    }
-  })
+  var userInfo = req.user.email
+  User.findOne({email:userInfo},function(err,foundUser){
+  if(foundUser.vendor === "no"){
+    res.redirect("home")
+  }else{
+    res.render("vendorResCreate")
+  }
+})
 }
+
 
 exports.createResturant = function (req,res) {
     var restaurantName = req.body.restaurantname;

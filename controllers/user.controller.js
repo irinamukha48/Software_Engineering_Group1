@@ -7,6 +7,7 @@ const e = require('connect-flash');
 const bcrypt = require('bcrypt');
 
 const UserOrder = require('../models/UserOrder');
+const Review = require('../models/review');
 
 generateEncryptedPassword = function(password){
     return bcrypt.hashSync(password,bcrypt.genSaltSync(10),null);
@@ -31,10 +32,23 @@ exports.render_login = function(req,res) {
 }
 
 exports.user_profile = function (req,res){
-    res.render("profile",{
-        errors: req.flash('errors'),
-        error: req.flash('error'),
-        user:req.user});
+    var name = req.user.name
+    User.findOne({email:req.user.email},function(err,found){
+     UserOrder.find({email:req.user.email},function(err,results){
+        Review.find({email:req.user.email},function(err,review){
+            res.render("profile",{
+                errors: req.flash('errors'),
+                error: req.flash('error'),
+                name: req.user.name,
+                username:found.username,
+                email : found.email ,
+                address: found.deliveryAddress,
+                newListItems:results,
+                newListItem:review})
+        })
+     })
+        
+    })
 }
 
 exports.render_edit_profile = function (req,res){
@@ -46,116 +60,51 @@ exports.render_edit_profile = function (req,res){
 
 exports.edit_profile = function (req,res){
 
-    var name  = (req.body.name.length == 0) ? req.user.name : req.body.name ;
-    var username = (req.body.username.length == 0) ? req.user.username : req.body.username ;
-    var email = (req.body.email.length == 0) ? req.user.email : req.body.email ;
-    var deliveryAddress = (req.body.deliveryAddress.length == 0) ? req.user.deliveryAddress : req.body.deliveryAddress ;
-    var password = (req.body.password.length == 0) ? req.user.password : generateEncryptedPassword(req.body.password) ;
-    var confirmPassword = (req.body.confirmPassword.length == 0) ? req.user.password : generateEncryptedPassword(req.body.confirmPassword) ;
+    exports.edit_profile = function (req,res){
+
+        var name  = (req.body.name.length == 0) ? req.user.name : req.body.name ;
+        var username = (req.body.username.length == 0) ? req.user.username : req.body.username ;
+        var email = (req.body.email.length == 0) ? req.user.email : req.body.email ;
+        var deliveryAddress = (req.body.deliveryAddress.length == 0) ? req.user.deliveryAddress : req.body.deliveryAddress ;
+        var password = (req.body.password.length == 0) ? req.user.password : generateEncryptedPassword(req.body.password) ;
+        var confirmPassword = (req.body.confirmPassword.length == 0) ? req.user.password : generateEncryptedPassword(req.body.confirmPassword) ;
+        
+        var correctPassword = req.user.password;
     
-    var correctPassword = req.user.password;
-
-    if(password != confirmPassword)
-    {
-        res.render('editProfile',{user:req.user, errors : "Passwords Dont Match"});
-    }
-    else
-    {
-        correctPassword = password;
-
-        User.findOne({email:req.user.email}, (err, foundUser) =>{
-            if(err)
-            {
-                res.redirect("/profile/edit");
-            }
-            if(foundUser)
-            {
-                UserOrder.findOneAndUpdate({email:req.user.email},{ "$set": {"email":email}}, function(err,res){})
-                Order.findOneAndUpdate({email:req.user.email},{ "$set": {"username": username, "email":email}}, function(err,res){})
-                User.findOneAndUpdate({email:req.user.email},{ "$set": { "name": name, "username": username, "deliveryAddress": deliveryAddress, "password": correctPassword, "email":email}}, function(err,res){})
-                req.session.passport.user.name = name;
-                req.session.passport.user.username = username;
-                req.session.passport.user.email = email;
-                req.session.passport.user.deliveryAddress = deliveryAddress;
-                req.session.passport.user.password = correctPassword;
-
-                res.redirect('/profile/edit/success');
-            }
-        })
+        if(password != confirmPassword)
+        {
+            res.render('editProfile',{user:req.user, errors : "Passwords Dont Match"});
+        }
+        else
+        {
+            correctPassword = password;
+    
+            User.findOne({email:req.user.email}, (err, foundUser) =>{
+                if(err)
+                {
+                    res.redirect("/profile/edit");
+                }
+                if(foundUser)
+                {
+                    UserOrder.findOneAndUpdate({email:req.user.email},{ "$set": {"email":email}}, function(err,res){})
+                    Order.findOneAndUpdate({email:req.user.email},{ "$set": {"username": username, "email":email}}, function(err,res){})
+                    User.findOneAndUpdate({email:req.user.email},{ "$set": { "name": name, "username": username, "deliveryAddress": deliveryAddress, "password": correctPassword, "email":email}}, function(err,res){})
+                    req.session.passport.user.name = name;
+                    req.session.passport.user.username = username;
+                    req.session.passport.user.email = email;
+                    req.session.passport.user.deliveryAddress = deliveryAddress;
+                    req.session.passport.user.password = correctPassword;
+    
+                    res.redirect('/profile/edit/success');
+                }
+            })
+        }
+     
     }
  
 }
 
 
 exports.render_past_order = function (req,res){
-    UserOrder.find({email:req.user.email} , function (err,foundOrders){
-
-        let orders = foundOrders;
-
-        const orderItems = [];
-
-        if(err)
-        {
-            req.flash(err);
-        }
-
-        if(foundOrders)
-        {   
-
-            for(i = 0; i<orders.length; i++)
-            {
-                orderItems[i] = {"Product" : [], "Quantity" : []};
-                var l =0;
-
-                for (var j in orders[i])
-                {
-                    if(j.includes("product"))
-                    {  
-                        if(j.includes("name"))
-                        {
-                            var quantity;
-                            var done = false
-                            
-                            for (k in orders[i]){
-
-                                if(done)
-                                {
-                                quantity = orders[i][k];
-                                break;  
-                                }
-
-                                if(k == j)
-                                {
-                                    done = true;
-                                }
-                                
-                            }
-
-                            if(quantity != 0)
-                            {
-                                orderItems[i].Product[l] = orders[i][j];
-                            } 
-                            
-                        }
-                        else if (j.includes("quantity"))
-                        {
-                            if(orders[i][j] != 0)
-                            {
-                                orderItems[i].Quantity[l] = orders[i][j];
-                                l++;
-                            }   
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
-        }
-
-        res.render("pastOrders",{pastOrders:orders,items:orderItems})
-
-
-
-    });
+    res.redirect("/home");
 }

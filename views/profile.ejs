@@ -2,54 +2,46 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="icon" href="images/homepage.ico">
-    <link rel="stylesheet" href="css/profile.css">
-    <title>Profile</title>
+    <title> <%=name%> Profile </title>
+    <link rel="icon" href="/images/homepage.ico">
+    <link rel="stylesheet" href="/css/profile.css">
   </head>
-  <body>
+  <body style="margin:0px;">
+        <div class="topnav">
+          <a class="active" href="/home">Home</a>
+          <a href="/profile/edit">Edit Profile</a>
+          
+        </div>
+        <form class="/resturants"  method="get">
+          <div class="box" id:"heading">
+      <h1> Hi, <%=name%> </h1>
 
-
-    <div class="navbar">
-      <a href="/home">Home</a>
-      <a href="/profile">Profile</a>
-      <a href="/profile/orders">Orders</a>
-    </div>
-
-    <div class="prof-img">
-        <img src="/images/profile.jpg" alt="">
-    </div>
-    
-    <div class="Display">
-
-      <div class= "name">
-      <h2>Name : <%=user.name%></h2>
+      <h2>Username: <%=username%> </h2>
+      <h2>Email: <%=email%> </h2>
+      <h2>Address: <%=address%> </h2>
       </div>
-
-      <div class= "userName">
-      <h2>Username : <%=user.username%></h2>
+     
+      <div class="box">
+        <h1> Order History</h1>
+        <% for (let i=0;i<newListItems.length; i++){ %>
+          <div class="item">
+           <h2> <%= newListItems[i].restaurantname %>  Total Bill: $<%= newListItems[i].bill %> </h2>
+          </div>
+       <% } %>
       </div>
-
-      <div class= "email">
-      <h2>Email : <%=user.email%></h2>
+      
+      <div class="box">
+        <h1> Review History</h1>
+        <% for (let i=0;i<newListItem.length; i++){ %>
+          <div class="item">
+           <h2> Resturant Name:<%= newListItem[i].restaurantname %> <br> Review: <%= newListItem[i].message %> </h2>
+          </div>
+       <% } %>
       </div>
+      
+      
+    </form>
 
-      <div class= "address">
-      <h2>Address : <%=user.deliveryAddress%></h2>
-      </div>
-
-    </div>
-
-    <div class = "edit">
-      <form action='profile/edit' method="get">
-        <input type="submit" value = "Edit Profile"></input>
-      </form>
-    </div>
-    
-    <div class = "logout">
-        <form action="/logout" method="delete">
-          <input type="submit" value = "Log Out"></input>
-        </form>
-    </div>
 
   </body>
 </html>

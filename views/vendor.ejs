@@ -2,11 +2,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-      <link rel="icon" href="images/homepage.ico">
-    <title> Vendors</title>
+    <title>Vendors</title>
+    <link rel="icon" href="/images/homepage.ico">
+    <link rel="stylesheet" href="/css/vendor.css">
   </head>
-  <body>
-    <h1>Hello</h1>
-    <a href="/vendor/createRestaurant">Publish Your Restaurant</a>
+  <body style="margin:0px;">
+    <form class="/resturants"  method="get">
+      <div class="box" id:"heading">
+      <h1> Welcome <%= name %> </h1>
+      </div>
+
+      <div class="box">
+        <div class="box"> 
+          <h1> Your Restaurant</h1>
+        
+        <% for (let i=0;i<newListItems.length; i++){ %>
+          <div class="item">
+            <h1> <%= newListItems[i].restaurantName %> </h1>
+            <h2> <%= newListItems[i].restaurantaddress %> </h2>
+          </div>
+       <% } %>
+       <a class="link" href= "/vendor/createRestaurant" ><h1> Publish Restaurant </h1></a>
+      </div>
+      </div>
+    </form>
+
+
   </body>
 </html>
