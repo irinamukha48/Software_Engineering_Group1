@@ -28,27 +28,27 @@ exports.createResturant = function (req,res) {
     var restaurantName = req.body.restaurantname;
                // Product One
   var prodOnename = req.body.productOneName;
-  var prodOnePrice = req.body.productOnePrice;
+  var prodOnePrice = Number(req.body.productOnePrice).toFixed(2);
   var prodOneimageurl = req.body.productOneImageurl;
                 // Product Two
   var prodTwoname = req.body.productTwoName;
-  var prodTwoPrice = req.body.productTwoPrice;
+  var prodTwoPrice = Number(req.body.productTwoPrice).toFixed(2);
   var prodTwoimageurl = req.body.productTwoImageurl;
                 // Product Three
   var prodThreename = req.body.productThreeName;
-  var prodThreePrice = req.body.productThreePrice;
+  var prodThreePrice = Number(req.body.productThreePrice).toFixed(2);
   var prodThreeimageurl = req.body.productThreeImageurl;
                  //Product Four
   var prodFourname = req.body.productFourName;
-  var prodFourPrice = req.body.productFourPrice;
+  var prodFourPrice = Number(req.body.productFourPrice).toFixed(2);
   var prodFourimageurl = req.body.productFourImageurl;
                  // Product Five
   var prodFivename = req.body.productFiveName;
-  var prodFivePrice = req.body.productFivePrice;
+  var prodFivePrice = Number(req.body.productFivePrice).toFixed(2);
   var prodFiveimageurl = req.body.productFiveImageurl;
                 // Product Six
   var prodSixname = req.body.productSixName;
-  var prodSixPrice = req.body.productSixPrice;
+  var prodSixPrice = Number(req.body.productSixPrice).toFixed(2);
   var prodSiximageurl = req.body.productSixImageurl;
 
   var CreateRestaurant = Restaurant({
@@ -83,6 +83,6 @@ exports.createResturant = function (req,res) {
 
   CreateRestaurant.save();
   console.log("restaurant have successfully created")
-  res.render("success",{Subject:"Your"+" "+restaurantName+" "+"have been successfully upload to ECE GRUBHUB.",
+  res.render("vendorSuccess",{Subject:"Your"+" "+restaurantName+" "+"have been successfully upload to ECE GRUBHUB.",
                           message:"As Always Thank you choosing Rutgers ECE "});
 }

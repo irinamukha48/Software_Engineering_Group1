@@ -1,0 +1,17 @@
+<%- include("partials/header"); -%>
+<h1> <%= name%> </h1>
+<h1> Time <%= time%></h1>
+<form class="" action="/review" method="post">
+  <div class="form-group">
+    <label>User</label>
+    <input class="form-control" type="text" name="username" required>
+    <label>Restaurant</label>
+    <input class="form-control" type="text" name="restaurantname" required>
+    <label>Review</label>
+    <textarea class="form-control" name="usermessage" rows="5" cols="30" required ></textarea>
+  </div>
+
+  <button class="btn btn-primary" type="submit" name="button">Publish</button>
+</form>
+
+<%- include("partials/footer"); -%>

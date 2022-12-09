@@ -25,7 +25,7 @@ router.get('/',function(req,res){
 
 router.post("/",
 check("name")
-.isAlpha()
+.isAlpha('en-US', {ignore: ' '})
 .withMessage('Full Name must be alphabetic'),
 
 // Checking The Email Address

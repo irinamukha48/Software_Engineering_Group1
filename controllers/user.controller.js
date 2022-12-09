@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Order = require('../models/order');
 const { check, validationResult } = require('express-validator');
 const { ConnectionPolicyPage } = require('twilio/lib/rest/voice/v1/connectionPolicy');
 const e = require('connect-flash');
@@ -69,6 +70,8 @@ exports.edit_profile = function (req,res){
             }
             if(foundUser)
             {
+                UserOrder.findOneAndUpdate({email:req.user.email},{ "$set": {"email":email}}, function(err,res){})
+                Order.findOneAndUpdate({email:req.user.email},{ "$set": {"username": username, "email":email}}, function(err,res){})
                 User.findOneAndUpdate({email:req.user.email},{ "$set": { "name": name, "username": username, "deliveryAddress": deliveryAddress, "password": correctPassword, "email":email}}, function(err,res){})
                 req.session.passport.user.name = name;
                 req.session.passport.user.username = username;
@@ -131,7 +134,6 @@ exports.render_past_order = function (req,res){
                             if(quantity != 0)
                             {
                                 orderItems[i].Product[l] = orders[i][j];
-                                console.log("name : " + orders[i][j]);
                             } 
                             
                         }
@@ -140,7 +142,6 @@ exports.render_past_order = function (req,res){
                             if(orders[i][j] != 0)
                             {
                                 orderItems[i].Quantity[l] = orders[i][j];
-                                console.log("quant : " + orders[i][j]);
                                 l++;
                             }   
                         }

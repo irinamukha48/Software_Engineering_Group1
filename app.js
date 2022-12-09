@@ -27,7 +27,7 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: {maxAge: 60000 * 20}
+    cookie: {maxAge: 60000 * 20, secure: false},
 }));
 
 
@@ -53,6 +53,9 @@ app.use('/user', users);
 //config for resturant route
 const resturants = require('./routes/resturant.route');
 app.use('/resturants', resturants);
+
+const review = require('./routes/review.routes');
+app.use('/review', review);
 
 /*
 // This Display Template of any resturant
