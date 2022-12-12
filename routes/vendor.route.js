@@ -21,4 +21,11 @@ router.get("/createRestaurant",checkNotAuthenticated,vendorController.renderRest
 
 router.post("/createRestaurant",checkNotAuthenticated,vendorController.createResturant);
 
+router.get("/logout", function(req, res){
+  req.logout(req.user, err => {
+    if(err) return next(err);
+    res.redirect("/");
+  });
+})
+
 module.exports = router

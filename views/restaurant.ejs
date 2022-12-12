@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Restaurants Menu </title>
-    <link rel="icon" href="images/homepage.ico">
+    <link rel="icon" href="/images/homepage.ico">
     <link rel="stylesheet" href="/css/restaurant.css">
   </head>
   <body style="margin:0px;">
@@ -15,8 +15,7 @@
       <div class="box">
         <% for (let i=0;i<newListItems.length; i++){ %>
           <div class="item">
-            <a class="link" href= "/resturants/<%= newListItems[i].restaurantName %>"<%= newListItems[i].restaurantName %> Restaurant >
-            <h1> <%= newListItems[i].restaurantName %> </h1></a>
+            <a class="link" href= "/resturants/<%= newListItems[i].restaurantName %>" ><h1> <%= newListItems[i].restaurantName %> </h1></a>
           </div>
        <% } %>
       </div>
