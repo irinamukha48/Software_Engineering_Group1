@@ -7,7 +7,7 @@ const e = require('connect-flash');
 const bcrypt = require('bcrypt');
 
 const UserOrder = require('../models/UserOrder');
-const Review = require('../models/review');
+const Review = require('../models/Review');
 
 generateEncryptedPassword = function(password){
     return bcrypt.hashSync(password,bcrypt.genSaltSync(10),null);

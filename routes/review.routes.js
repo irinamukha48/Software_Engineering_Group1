@@ -5,7 +5,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: true }));
 
-const Review = require('../models/review');
+const Review = require('../models/Review');
 var time = new Date().toLocaleTimeString(); // 11:18:48 AM
 
 var twentyMinutesLater = new Date();
