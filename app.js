@@ -127,5 +127,5 @@ app.get('*', function(req, res){
 * listen to port
 */
 app.listen(PORT, ()=> {
-    console.log('this application is wokring on port ' + PORT)
+    console.log('this application is working on port ' + PORT)
 })
