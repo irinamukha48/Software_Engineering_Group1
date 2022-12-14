@@ -65,11 +65,6 @@ $\text{\textcolor{red}{Problems user might run into:}}$
   <li>Users may not be able to access it because of service outages.</li>
 </ul>
    
-<h2> $\text{\textcolor{olive}{Making Changes}}$ </h2>
-
-<p>Please create a separate branch for any changes or adding of features.\
-Once you have the feature working create a merge request w/ a brief description of your changes.\
-Someone will soon look at your request and merge it with the main branch.</p>
 
 
 
