@@ -1,6 +1,6 @@
 <div align="center">
    <h1> $\text{\textcolor{olive}{Software Engineering Group1}}$ </h1>
-   <p> $\text{\textcolor{red}{This is the project for Software Engineering, created by Group 1}}$ </p>
+   <p> $\text{\textcolor{black}{This is the project for Software Engineering, created by Group 1}}$ </p>
 </div>
 
 <h2> $\text{\textcolor{olive}{Project Overview }}$ </h2>
