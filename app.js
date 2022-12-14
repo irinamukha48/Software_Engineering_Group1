@@ -34,9 +34,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-/**
-* configuration for flash.
-*/
+/*
+ * configuration for flash.
+ */
 app.use(flash());
 
 
@@ -47,14 +47,14 @@ app.get('/', (req,res)=> {
  })
 
 //config for user route
-const users = require('./routes/user.routes');
+const users = require('./routes/user.route');
 app.use('/user', users);
 
 //config for resturant route
 const resturants = require('./routes/resturant.route');
 app.use('/resturants', resturants);
 
-const review = require('./routes/review.routes');
+const review = require('./routes/review.route');
 app.use('/review', review);
 
 /*
@@ -123,9 +123,9 @@ app.get('*', function(req, res){
     res.status(404).redirect('/');
 });
 
-/**
-* listen to port
-*/
+/*
+ * listen to port
+ */
 app.listen(PORT, ()=> {
     console.log('this application is working on port ' + PORT)
 })
