@@ -56,6 +56,8 @@ $\text{\textcolor{red}{c. MongoDB connections:}}$
 
 $\text{\textcolor{red}{The workflow:}}$
 
+<img src="systemoverview.png" width="460" height="345">
+
 <h2> $\text{\textcolor{olive}{Q and A }}$ </h2>
 
 $\text{\textcolor{red}{Problems user might run into:}}$
@@ -64,6 +66,10 @@ $\text{\textcolor{red}{Problems user might run into:}}$
   <li>User could face unstable network connectivity.</li>
   <li>System might crash if more users access at the same time.</li>
   <li>Users may not be able to access it because of service outages.</li>
+  <li>"Bcrypt" package issue</li>
+  <li>       - Issue message: Error: dlopen</li>
+  <li>       - Solution: npm install bcrypt</li>
+
 </ul>
    
 
