@@ -56,7 +56,7 @@ $\text{\textcolor{red}{c. MongoDB connections:}}$
 
 $\text{\textcolor{red}{The workflow:}}$
 
-<img src="systemoverview.png" width="460" height="345">
+<img src="(https://user-images.githubusercontent.com/120688715/207990532-fcb76f7b-8522-44b1-a686-3e400ae18567.png)" width="460" height="345">
 
 <h2> $\text{\textcolor{olive}{Q and A }}$ </h2>
 
