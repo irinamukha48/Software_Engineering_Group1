@@ -40,7 +40,8 @@ $\text{\textcolor{red}{b. Steps to run our code:}}$
   <li>Open the terminal in the project directory</li>
   <li>Run the following command to install the dependencies"npm install "</li>
   <li>Run the following command to run live version (restarts the website automatically when changes are made) " npm run watch "</li>
-  <li>un the following command to run normal version (wil have to execute this everytime you make a change) " npm app.js "</li>
+  <li>Run the following command to run normal version (wil have to execute this everytime you make a change) " npm app.js "</li>
+  <li>Visit http://localhost:3000 in browser to view website</li>
 </ol>  
 
 $\text{\textcolor{red}{c. MongoDB connections:}}$
