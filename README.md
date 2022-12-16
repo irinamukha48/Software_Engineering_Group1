@@ -47,6 +47,15 @@ $\text{\textcolor{red}{The workflow:}}$
 
 ![systemoverview](https://user-images.githubusercontent.com/120688715/207990896-8b1e7ad8-11db-4d92-8347-d7795d30869c.png)
 
+<h2> $\text{\textcolor{olive}{MongoDB Data Collections}}$ </h2>
+
+![restaurants](https://user-images.githubusercontent.com/120688715/208208875-631dc03d-f93b-409b-9063-d008f5db1786.png)
+![users](https://user-images.githubusercontent.com/120688715/208208905-3bbb92b3-1378-452d-b94e-16da3f2fcb65.png)
+![reviews](https://user-images.githubusercontent.com/120688715/208208920-4a94ce64-cce2-47e3-a88b-84fa3772b1ce.png)
+![invoices](https://user-images.githubusercontent.com/120688715/208208951-088d3a65-e785-4ad7-8064-1171576334a7.png)
+![orders](https://user-images.githubusercontent.com/120688715/208208962-6e41547a-a8cc-4122-b96a-d433f60b9dc1.png)
+
+
 <h2> $\text{\textcolor{olive}{Q and A }}$ </h2>
 
 $\text{\textcolor{red}{Problems user might run into:}}$
