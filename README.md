@@ -31,26 +31,15 @@ $\text{\textcolor{red}{c. What problems we are trying to solve:}}$
 
 <h2> $\text{\textcolor{olive}{How to run our code}}$ </h2>
 
-$\text{\textcolor{red}{a. Package requirements (libraries needed):}}$
+$\text{\textcolor{red}{a. Requirements:}}$
 
-<p>Package requirements are described in the package.json file. </p>
+<p>First navigate to the project directory using [Node.js](https://nodejs.org/en/) run the following command: "npm install" </p>
 
-$\text{\textcolor{red}{b. Steps to run our code:}}$
-<ol>
-  <li>Open the terminal in the project directory</li>
-  <li>Run the following command to install the dependencies"npm install "</li>
-  <li>Run the following command to run live version (restarts the website automatically when changes are made) " npm run watch "</li>
-  <li>Run the following command to run normal version (wil have to execute this everytime you make a change) " npm app.js "</li>
-  <li>Visit http://localhost:3000 in browser to view website</li>
-</ol>  
+$\text{\textcolor{red}{b. Usage:}}$
 
-$\text{\textcolor{red}{c. MongoDB connections:}}$
-<p>Code automatically connects to mongoDB.
-          To view database login to https://account.mongodb.com/account/login using the credentials below. Once logged in navigate to the Database tab and then click ECEGrubhub to view database statistics.
-
-          Username : ECE_GrubHub_Admin
-          Password : DaJoUVFGGBzWVC7z
- </p>
+<p>While in the main project directory, running the live version of the code (which automatically restarts when changes are made) can be done with the following command: "npm run watch"</p>
+<p> Or to run the normal version you can use this command instead:"npm app.js"</p>
+<p> Once the code is running website visit the following URL in your browser to see the website: "http://localhost:3000" </p>
  
 <h2> $\text{\textcolor{olive}{System overview}}$ </h2>
 
