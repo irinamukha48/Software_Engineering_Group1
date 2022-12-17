@@ -10,7 +10,6 @@ const flash = require('express-flash');
 const session = require('express-session');
 const passport = require('passport');
 const passportSetup = require('./config/passport-setup');
-const client = require("twilio")(process.env.ACCOUNT_SID,process.env.AUTH_TOKEN);
 const Restaurant = require('./models/restaurants');
 const Order = require('./models/order');
 
