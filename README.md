@@ -1,75 +1,88 @@
-<div align="center">
-   <h1> $\text{\textcolor{olive}{Software Engineering Group1}}$ </h1>
-   <p> $\text{This is the project for Software Engineering, created by Group 1}$ </p>
-</div>
+# ECEGrubhub
 
-<h2> $\text{\textcolor{olive}{Project Overview }}$ </h2>
+ECE Grubhub, a revolutionary meal delivery application like Grubhub allows Rutgers students to order food from their favorite restaurant and have it delivered right on their door in real time!
 
-$\text{\textcolor{brown}{a. Team members:}}$
-<ul>
-  <li>Linqi Xiao</li>
-  <li>Meghana Achyutananda</li>
-  <li>Maliha Yeasmin</li>
-  <li>Irina Mukhametzhanova</li>
-  <li>Dhruv Rana</li>
-  <li>Rahaf Abdallah</li>
-  <li>Liao Xu</li>
-  <li>Youngjung Cho</li>
-  <li>Qizhen Ding</li>
-  <li>Arslan Tariq</li>
-  <li>Christian Kushnir</li>
-  <li>Ronik Kapadia</li>  
-</ul>  
+## About
+<p align="center">
+<img src="https://i.ibb.co/Nj3jpph/Screenshot-2022-12-16-193441.png"
+  width="650" height="400">
+</p>
+Coming into college, students are often not familiar with the campus food places, now with our custom app, that is especially catered for our own Rutgers students, students won't face the same problem. Our application was created with the aim to re-create some of Grubhub’s functionalities but make it simpler and convenient for student's to navigate through stores near campus and order from there. Special feature about our app is that it gives students a discount rate whenever they place an order through our app!
 
-$\text{\textcolor{brown}{b. Goal of the project:}}$ 
+## Project Overview
 
-<p> ECE Grubhub, a revolutionary meal delivery application like Grubhub allows Rutgers students to order food from their favorite restaurant and have it delivered right on their door in real time! </p>
+### Features
 
-$\text{\textcolor{brown}{c. What problems we are trying to solve:}}$
+ECEGrubhub has many features which make it a successful meal delivery service. Firstly both users and vendors are able to create and register an account. Once a vendor creates an account they are able to register multiple restaurants with their own food, beverage, and pricing options. And once a user creates an account they are able to see all available restaurants and place orders for what they would like. Once an order is placed an invoice is sent to the user's email, and an estimated delivery time is calculated. Users are also able to write reviews about restaurants they have ordered from. ECEGrubhub also supports several other features such as editing of user/vendor information, credit card validation, and much more. 
 
-<p>Coming into college, students are often not familiar with the campus food places, now with our custom app, that is especially catered for our own Rutgers students, students won't face the same problem. Our application was created with the aim to re-create some of Grubhub’s functionalities but make it simpler and convenient for student's to navigate through stores near campus and order from there. Special feature about our app is that it gives students a discount rate whenever they place an order through our app! </p>
+### Technical Specifications
 
-<h2> $\text{\textcolor{olive}{How to run our code}}$ </h2>
-
-$\text{\textcolor{brown}{a. Requirements:}}$
-
-<p>First navigate to the project directory using [Node.js](https://nodejs.org/en/) run the following command: "npm install" </p>
-
-$\text{\textcolor{brown}{b. Usage:}}$
-
-<p>While in the main project directory, running the live version of the code (which automatically restarts when changes are made) can be done with the following command: "npm run watch"</p>
-<p> Or to run the normal version you can use this command instead:"npm app.js"</p>
-<p> Once the code is running website visit the following URL in your browser to see the website: "http://localhost:3000" </p>
- 
-<h2> $\text{\textcolor{olive}{System overview}}$ </h2>
-
-$\text{\textcolor{brown}{The workflow:}}$
-
-![systemoverview](https://user-images.githubusercontent.com/120688715/207990896-8b1e7ad8-11db-4d92-8347-d7795d30869c.png)
-
-<h2> $\text{\textcolor{olive}{MongoDB Data Collections}}$ </h2>
-
-![restaurants](https://user-images.githubusercontent.com/120688715/208208875-631dc03d-f93b-409b-9063-d008f5db1786.png)
-![users](https://user-images.githubusercontent.com/120688715/208208905-3bbb92b3-1378-452d-b94e-16da3f2fcb65.png)
-![reviews](https://user-images.githubusercontent.com/120688715/208208920-4a94ce64-cce2-47e3-a88b-84fa3772b1ce.png)
-![invoices](https://user-images.githubusercontent.com/120688715/208208951-088d3a65-e785-4ad7-8064-1171576334a7.png)
-![orders](https://user-images.githubusercontent.com/120688715/208208962-6e41547a-a8cc-4122-b96a-d433f60b9dc1.png)
-
-
-<h2> $\text{\textcolor{olive}{Q and A }}$ </h2>
-
-$\text{\textcolor{brown}{Problems user might run into:}}$
-
-<ul>
-  <li>User could face unstable network connectivity.</li>
-  <li>System might crash if more users access at the same time.</li>
-  <li>Users may not be able to access it because of service outages.</li>
-  <li>"Bcrypt" package issue</li>
-  <li>       - Issue message: Error: dlopen</li>
-  <li>       - Solution: npm install bcrypt</li>
-
-</ul>
+Our Project made use of several technologies in order to implement its many features. The tools we utilized included: 
+- `MongoDB/Mongoose` - used to implement our backend database which stores reviews, restaurants and user/vendor information, as well as logs from events such as orders and invoices. 
+- `Bcrypt` - implemented to hash passwords in order to keep user information safe. 
+- `Nodemailer` - utilized to send invoice emails to users after an order was placed. 
+- `Creditcardutils` - used to verify valid credit card information.
+- `Passport` - used to authenticate user signup/login requests. 
+- `Express-validator` - used for server-side data validation. 
 
 
 
+### System overview
+<p align="center">
+<img src="https://user-images.githubusercontent.com/120688715/207990896-8b1e7ad8-11db-4d92-8347-d7795d30869c.png"
+  width="650" height="220">
+</p>
 
+
+## How to run our code
+
+### Requirements
+To run our project you will need to have all the packages listed within the packages.json file. To install those packages navigate to the project directory and using [Node.js](https://nodejs.org/en/) run the following command:
+```
+npm install
+```
+
+### Usage
+While in the main project directory, running the live version of the code (which automatically restarts when changes are made) can be done with the following command: 
+```
+npm run watch
+```
+Or to run the normal version you can use this command instead: 
+```
+npm app.js
+```
+Once the code is running, visit `http://localhost:3000` in your browser to view the website.
+
+## Q&A
+
+#### How do I sign up as a vendor and not a user?
+
+During the signup process you will be prompted with whether you would like to be a vendor or a normal user. Vendors will be able to order food just like users but will provide the additional functionality to add restaurants. 
+
+## Known Issues
+
+- Users could face unstable network connectivity.
+
+- System might crash if more users access it at the same time.
+
+- Users may not be able to access it because of service outages
+
+- "Bcrypt" package issue during installation. Error message: `Error: dlopen`. Solution is to run `npm install bcrypt` to reinstall the package and fix any issues. 
+
+## Team
+
+This is the project created by Rutgers Engineering students for their Software Engineering (14:332:452) class. The students were part of Group 1.
+
+### Team members
+- Linqi Xiao
+- Meghana Achyutananda
+- Maliha Yeasmin
+- Irina Mukhametzhanova
+- Dhruv Rana
+- Rahaf Abdallah
+- Liao Xu
+- Youngjung Cho
+- Qizhen Ding
+- Arslan Tariq
+- Christian Kushnir
+- Ronik Kapadia  
