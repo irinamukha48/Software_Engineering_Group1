@@ -5,7 +5,7 @@
 
 <h2> $\text{\textcolor{olive}{Project Overview }}$ </h2>
 
-$\text{\textcolor{red}{a. Team members:}}$
+$\text{\textcolor{brown}{a. Team members:}}$
 <ul>
   <li>Linqi Xiao</li>
   <li>Meghana Achyutananda</li>
@@ -21,21 +21,21 @@ $\text{\textcolor{red}{a. Team members:}}$
   <li>Ronik Kapadia</li>  
 </ul>  
 
-$\text{\textcolor{red}{b. Goal of the project:}}$ 
+$\text{\textcolor{brown}{b. Goal of the project:}}$ 
 
 <p> ECE Grubhub, a revolutionary meal delivery application like Grubhub allows Rutgers students to order food from their favorite restaurant and have it delivered right on their door in real time! </p>
 
-$\text{\textcolor{red}{c. What problems we are trying to solve:}}$
+$\text{\textcolor{brown}{c. What problems we are trying to solve:}}$
 
 <p>Coming into college, students are often not familiar with the campus food places, now with our custom app, that is especially catered for our own Rutgers students, students won't face the same problem. Our application was created with the aim to re-create some of Grubhub’s functionalities but make it simpler and convenient for student's to navigate through stores near campus and order from there. Special feature about our app is that it gives students a discount rate whenever they place an order through our app! </p>
 
 <h2> $\text{\textcolor{olive}{How to run our code}}$ </h2>
 
-$\text{\textcolor{red}{a. Requirements:}}$
+$\text{\textcolor{brown}{a. Requirements:}}$
 
 <p>First navigate to the project directory using [Node.js](https://nodejs.org/en/) run the following command: "npm install" </p>
 
-$\text{\textcolor{red}{b. Usage:}}$
+$\text{\textcolor{brown}{b. Usage:}}$
 
 <p>While in the main project directory, running the live version of the code (which automatically restarts when changes are made) can be done with the following command: "npm run watch"</p>
 <p> Or to run the normal version you can use this command instead:"npm app.js"</p>
@@ -43,7 +43,7 @@ $\text{\textcolor{red}{b. Usage:}}$
  
 <h2> $\text{\textcolor{olive}{System overview}}$ </h2>
 
-$\text{\textcolor{red}{The workflow:}}$
+$\text{\textcolor{brown}{The workflow:}}$
 
 ![systemoverview](https://user-images.githubusercontent.com/120688715/207990896-8b1e7ad8-11db-4d92-8347-d7795d30869c.png)
 
@@ -58,7 +58,7 @@ $\text{\textcolor{red}{The workflow:}}$
 
 <h2> $\text{\textcolor{olive}{Q and A }}$ </h2>
 
-$\text{\textcolor{red}{Problems user might run into:}}$
+$\text{\textcolor{brown}{Problems user might run into:}}$
 
 <ul>
   <li>User could face unstable network connectivity.</li>
