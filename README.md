@@ -67,7 +67,7 @@ During the signup process you will be prompted with whether you would like to be
 
 - Users may not be able to access it because of service outages
 
-- "Bcrypt" package issue during installation. Error message: `Error: dlopen`. Solution is to run `npm install bcrypt` to reinstall the package and fix any issues. 
+- `Bcrypt` package issue during installation. Error message: `Error: dlopen`. Solution is to run `npm install bcrypt` to reinstall the package and fix any issues. 
 
 ## Team
 
