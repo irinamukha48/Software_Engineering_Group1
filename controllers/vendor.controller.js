@@ -1,6 +1,11 @@
 const User = require('../models/User');
 const Restaurant = require('../models/restaurants');
 
+/**
+ * Renders Vendor page
+ * @param {} req
+ * @param {} res
+ */
 exports.renderVendorPage = function (req,res) {
   var userInfo = req.user.email
   var name     = req.user.name
@@ -17,6 +22,11 @@ exports.renderVendorPage = function (req,res) {
 })
 }
 
+/**
+ * Renders Restaurant create page
+ * @param {} req
+ * @param {} res
+ */
 exports.renderRestCreatePage = function (req,res) {
   var userInfo = req.user.email
   User.findOne({email:userInfo},function(err,foundUser){
@@ -28,7 +38,11 @@ exports.renderRestCreatePage = function (req,res) {
 })
 }
 
-
+/**
+ * Creates Restaurant
+ * @param {} req
+ * @return {} res
+ */
 exports.createResturant = function (req,res) {
     var restaurantName = req.body.restaurantname;
                // Product One

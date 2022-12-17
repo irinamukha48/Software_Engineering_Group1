@@ -11,6 +11,11 @@ var items = []
 var ordernumber = Math.floor(Math.random()*10000)+1000;
 var creditcardutils = require('creditcardutils');// Libary
 
+/**
+ * Decodes URI
+ * @param {string} val - input URI
+ * @return {string} - decoded URI
+ */
 function URIDecoder(val)
 {
   val=val.replace(/\+/g, '%20');
@@ -24,6 +29,10 @@ function URIDecoder(val)
   return cval;
 }
 
+/**
+ * @param {} req 
+ * @param {} res
+ */
 exports.all_resturant = function(req,res) {
 
   Restaurant.find({},function(err,foundrestaurant){
@@ -33,6 +42,11 @@ exports.all_resturant = function(req,res) {
 
 }
 
+/**
+ * Renders restaurant page
+ * @param {} req
+ * @param {} res
+ */
 exports.render_resturant = function(req,res) {
     const url =  req.headers.referer;
     const customListName = req.params.customListName
@@ -166,6 +180,11 @@ exports.render_resturant = function(req,res) {
   
 }
 
+/**
+ * Modifies order 
+ * @param {} req
+ * @param {} res  
+ */
 exports.modify_order = function(req,res) {
     var name = req.user.name
 
@@ -337,6 +356,11 @@ exports.modify_order = function(req,res) {
   res.redirect('/resturants/'+customListName);
 }
 
+/**
+ * Renders order checkout page
+ * @param {} req  
+ * @param {} res 
+ */
 exports.render_checkout_order = function(req,res) {
 
     const url =  req.headers.referer;
@@ -368,6 +392,11 @@ exports.render_checkout_order = function(req,res) {
     })
 }
 
+/**
+ * links order to user
+ * @param {} req
+ * @param {} res 
+ */
 exports.link_order_and_user = function(req,res) {
     const url =  req.headers.referer;
     const customResturants = req.params.customResturants
@@ -464,7 +493,11 @@ exports.link_order_and_user = function(req,res) {
         //res.redirect("/resturants/"+customResturants+"/checkout/success")
     })
 }
-
+/**
+ * Renders order complete page
+ * @param {} req
+ * @param {} res 
+ */
 exports.render_success = function (req,res) {
     const url =  req.headers.referer;
     const customResturants = req.params.customResturants

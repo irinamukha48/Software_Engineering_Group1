@@ -8,14 +8,30 @@ const bcrypt = require('bcrypt');
 const UserOrder = require('../models/UserOrder');
 const Review = require('../models/Review');
 
+/**
+ * Encrypts user password
+ * @param {string} password - text password
+ * @return {string} - encrypted version of password
+ */
 generateEncryptedPassword = function(password){
     return bcrypt.hashSync(password,bcrypt.genSaltSync(10),null);
 };
 
+/**
+ * Validates user password
+ * @param {string} password - text password
+ * @param {string} confirmPassword - confirmation password
+ * @return {boolean} - if password matches confirmation password
+ */
 validatePassword = function(password,confirmPassword){
     return bcrypt.compareSync(password, confirmPassword);
 };
 
+/**
+ * Renders registration page
+ * @param {} req 
+ * @param {} res 
+ */
 exports.render_registration = function(req,res) {
     res.render('register', {
         errors: req.flash('errors'),
@@ -23,6 +39,11 @@ exports.render_registration = function(req,res) {
     })
 }
 
+/**
+ * Renders login page
+ * @param {} req 
+ * @param {} res 
+ */
 exports.render_login = function(req,res) {
     res.render('login', {
         errors: req.flash('errors'),
@@ -30,6 +51,11 @@ exports.render_login = function(req,res) {
     })
 }
 
+/**
+ * Renders profile page
+ * @param {} req 
+ * @param {} res 
+ */
 exports.user_profile = function (req,res){
     var name = req.user.name
     User.findOne({email:req.user.email},function(err,found){
@@ -50,6 +76,11 @@ exports.user_profile = function (req,res){
     })
 }
 
+/**
+ * Renders edit profile page 
+ * @param {} req 
+ * @param {} res 
+ */
 exports.render_edit_profile = function (req,res){
     res.render("editProfile",{
         errors: req.flash('errors'),
@@ -57,6 +88,11 @@ exports.render_edit_profile = function (req,res){
         user:req.user});
 }
 
+/**
+ * Renders edit profile page and updates user information if password and confirmation password matches
+ * @param {} req 
+ * @param {} res 
+ */
 exports.edit_profile = function (req,res){
 
     exports.edit_profile = function (req,res){
@@ -103,7 +139,11 @@ exports.edit_profile = function (req,res){
  
 }
 
-
+/**
+ * Renders the past orders page
+ * @param {} req 
+ * @param {} res 
+ */
 exports.render_past_order = function (req,res){
     res.redirect("/home");
 }
